@@ -21,7 +21,7 @@ redirect_from:
 
 ## **Professional Experience**
 
-### [**University of Southern California**](https://viterbi.usc.edu/directory/faculty/Penkova/Anita)
+### <a href="https://viterbi.usc.edu/directory/faculty/Penkova/Anita" target="_blank" style="text-decoration: none; color: inherit;">**University of Southern California**</a>
 **Machine Learning Engineer**  
 *Aug 2024 - Present | Remote, CA*  
 Ophthalmology research at Dr. Penkova's lab, cool computer vision stuff for early glaucoma detection.
