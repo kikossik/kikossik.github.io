@@ -7,6 +7,9 @@ redirect_from:
   - /about.html
 ---
 
+Passionate about data visualization and machine learning. Looking for full-time positions, or internships for Spring 2025 term.  
+Check out my Portfolio!
+
 ## **Education**
 
 - **University of Southern California**  
