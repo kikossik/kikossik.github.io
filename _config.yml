@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "My Homepage"
 title_separator          : "-"
 name                     : &name "David Tovmasyan"
 description              : &description "Currently building my portfolio"
