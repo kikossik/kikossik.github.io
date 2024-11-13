@@ -13,6 +13,7 @@ Key accomplishments:
 - Presented research at the SBU Economics Conference and showcased a poster for the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">EACC VIP</a> team with Prof. Halada at the URECA Symposium.
 
 ---
+
 Data Cleaning
 ======
 ---
@@ -20,6 +21,7 @@ I got the data from <a href="https://www.phmsa.dot.gov/data-and-statistics/pipel
 Jupyter Notebook - <a href="https://github.com/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb" target="_blank">GitHub</a> <a href="https://nbviewer.org/github/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb" target="_blank">NBViewer</a>
 
 ---
+
 Interactive Dashboard
 ======
 ---
@@ -27,6 +29,7 @@ I had the opportunity to integrate my research with **CSE 332 - Introduction to 
 View the <a href="https://kikossik.pythonanywhere.com/" target="_blank">full dasbhoard here</a>
 
 ---
+
 SBU Economics Conference and URECA
 ======
 ---
