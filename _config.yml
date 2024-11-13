@@ -20,6 +20,7 @@ repository               : "kikossik/kikossik.github.io"
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
+  resume           : "/files/David Tovmasyan - Resume.pdf"
   # Biographic information
   avatar           : "profile.png"
   name             : "David Tovmasyan"
@@ -29,7 +30,7 @@ author:
   employer         : "MS USC, BS SBU"
   uri              : # URL
   email            : "dtovm001@gmail.com" 
-  resume           : "/files/David Tovmasyan - Resume.pdf"
+
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
