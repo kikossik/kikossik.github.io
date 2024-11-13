@@ -9,7 +9,7 @@ redirect_from:
 
 Passionate about data visualization and machine learning. Looking for full-time positions, or internships for Spring 2025 term.  
 Check out my Portfolio!
-## **Education**
+## Education
 
 - **University of Southern California**  
   M.S., Data Science *(Part-Time + Remote, Open to Full-Time Work)*  
@@ -21,7 +21,7 @@ Check out my Portfolio!
 
 ---
 
-## **Professional Experience**
+**Professional Experience**
 
 ### **University of Southern California**  
 **Machine Learning Engineer**  
