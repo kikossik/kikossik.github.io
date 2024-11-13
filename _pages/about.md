@@ -10,7 +10,7 @@ redirect_from:
 ## **Education**
 
 - **University of Southern California**  
-  M.S., Data Science *(Part-Time, Open to Full-Time Work)*  
+  M.S., Data Science *(Part-Time + Remote, Open to Full-Time Work)*  
   *Exp. Graduation: Dec 2025*
   
 - **Stony Brook University**  
@@ -38,7 +38,7 @@ Kicked off a fancy churn prediction model for ABC Ignite, diving into millions o
 ### **Stony Brook University**  
 **Data Scientist - Research**  
 *Jan 2023 - May 2024 | Stony Brook, NY*  
-Researched how climate change messes with oil&gas pipelines, built a dashboard to map out damage locations.
+Researched how climate change messes with oil & gas pipelines, built a dashboard to map out damage locations.
 
 ---
 
