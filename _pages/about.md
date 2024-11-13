@@ -29,7 +29,7 @@ Professional Experience
 - **ABC Fitness**  
   **Product Analyst Intern**  
   *Jun 2024 - Aug 2024 | Remote, CA*  
-  Automated Machine Learning with PyCaret, built my own churn prediction model for ABC Ignite, analyzing 7M+ rows of data in Azure SQL, PowerBI dashboard.
+  Automated Machine Learning with PyCaret, built my own churn prediction model for ABC Ignite, analyzed 7M+ rows of data in Azure SQL, PowerBI dashboard.
 
 - **Stony Brook University**  
   **Data Scientist - Research**  
@@ -44,5 +44,5 @@ Professional Experience
 - **Sberbank**  
   **Credit Risk Modeling Intern**  
   *Jun 2021 - Aug 2021 | Almaty, Kazakhstan*  
-  Probability of Default modeling for small business loans, automating data collection for LGD model, fixing Excel tools using Python and VBA.
+  Probability of Default modeling for small business loans, automated data collection for LGD model, fixed Excel tools using Python and VBA.
 
