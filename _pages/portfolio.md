@@ -5,7 +5,7 @@ permalink: /projects/
 author_profile: true
 ---
 
-### Projects
+### **Projects**
 
 ## **OctagonInsights - MMA Analytics Platform**
 *Tech Stack: PERN (PostgreSQL, Express, React, Node.js), D3.js*
@@ -21,7 +21,7 @@ Created a machine learning model to predict gym member churn for ABC Fitness’s
 
 ---
 
-### Fun Stats
+### **Fun Projects**
 
 ## **SFSFSFS**
 *Tech Stack: Python, SQL, PyCaret, PowerBI*
