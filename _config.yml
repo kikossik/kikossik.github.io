@@ -22,7 +22,7 @@ repository               : "kikossik/kikossik.github.io"
 author:
   resume           : "/files/David Tovmasyan - Resume.pdf"
   # Biographic information
-  avatar           : "321.png"
+  avatar           : "test.png"
   name             : "David Tovmasyan"
   pronouns         : # example: "she/her"  
   bio              : "Currently building my portfolio"
