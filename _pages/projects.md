@@ -5,7 +5,6 @@ permalink: /projects/
 author_profile: true
 ---
 
-# Projects
 
 ## Project 1: **OctagonInsights - MMA Analytics Platform**
 *Tech Stack: PERN (PostgreSQL, Express, React, Node.js), D3.js*

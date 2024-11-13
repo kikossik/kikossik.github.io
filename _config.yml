@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "David's Homepage"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "David Tovmasyan"
 description              : &description "Currently building my portfolio"
@@ -26,7 +26,7 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Currently building my portfolio"
   location         : "Los Angeles, CA"
-  employer         : "University of Southern California (USC)"
+  employer         : "MS USC, BS SBU"
   uri              : # URL
   email            : "dtovm001@gmail.com" 
 
