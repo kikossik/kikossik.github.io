@@ -21,7 +21,7 @@ View the <a href="https://kikossik.pythonanywhere.com/" target="_blank">full das
 
 SBU Economics Conference and URECA
 ---
-I got to present my research at the **SBU Economics Conference**, and I also put together a poster for **URECA** as part of the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">**EACC VIP**</a> team with Prof. Halada. It was a great experience getting our project out there for more people to see. I have attached my poster below, where you can see my work in researching about the topic and creating better visualizations that tell the story better.  
+I got to present my research at the **SBU Economics Conference**, and I also put together a poster for **URECA** as part of the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">**EACC VIP**</a> team with Prof. Halada. It was a great experience getting our project out there for more people to see. I have attached my poster below, where you can see my work in researching about the topic and creating visualizations to help capture the story better.  
 <img src='/images/poster.PNG'>
 
 
