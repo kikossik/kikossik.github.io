@@ -21,32 +21,28 @@ Education
 
 Professional Experience
 ---
-**University of Southern California**  
-**Computer Vision Engineer**  
-*Aug 2024 - Present | Remote, CA*  
-Ophthalmology research at Dr. Penkova's lab, cool computer vision stuff for early glaucoma detection.
+- **University of Southern California**  
+  **Computer Vision Engineer**  
+  *Aug 2024 - Present | Remote, CA*  
+  Ophthalmology research at Dr. Penkova's lab, cool computer vision stuff for early glaucoma detection.
 
----
-**ABC Fitness**  
-**Product Analyst Intern**  
-*Jun 2024 - Aug 2024 | Remote, CA*  
-Automated Machine Learning with PyCaret, built my own churn prediction model for ABC Ignite, analyzing 7M+ rows of data in Azure SQL, PowerBI dashboard.
+- **ABC Fitness**  
+  **Product Analyst Intern**  
+  *Jun 2024 - Aug 2024 | Remote, CA*  
+  Automated Machine Learning with PyCaret, built my own churn prediction model for ABC Ignite, analyzing 7M+ rows of data in Azure SQL, PowerBI dashboard.
 
----
-**Stony Brook University**  
-**Data Scientist - Research**  
-*Jan 2023 - May 2024 | Stony Brook, NY*  
-Researched how climate change messes with oil & gas pipelines, interactive dashboard mapping pipeline damage, presented at SBU Econ Conference and URECA.
+- **Stony Brook University**  
+  **Data Scientist - Research**  
+  *Jan 2023 - May 2024 | Stony Brook, NY*  
+  Researched how climate change messes with oil & gas pipelines, interactive dashboard mapping pipeline damage, presented at SBU Econ Conference and URECA.
 
----
-**Akai Kaeru**  
-**Data Science Intern**  
-*Jun 2022 - Aug 2022 | Stony Brook, NY*  
-Tested out an AI data science platform with Prof. Mueller, ran 20+ statistical learning models, bug detection to help making the software better.
+- **Akai Kaeru**  
+  **Data Science Intern**  
+  *Jun 2022 - Aug 2022 | Stony Brook, NY*  
+  Tested out an AI data science platform with Prof. Mueller, ran 20+ statistical learning models, bug detection to help making the software better.
 
----
-**Sberbank**  
-**Credit Risk Modeling Intern**  
-*Jun 2021 - Aug 2021 | Almaty, Kazakhstan*  
-Probability of Default modeling for small business loans, automating data collection for LGD model, fixing Excel tools using Python and VBA.
+- **Sberbank**  
+  **Credit Risk Modeling Intern**  
+  *Jun 2021 - Aug 2021 | Almaty, Kazakhstan*  
+  Probability of Default modeling for small business loans, automating data collection for LGD model, fixing Excel tools using Python and VBA.
 
