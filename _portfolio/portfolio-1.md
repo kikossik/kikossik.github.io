@@ -12,7 +12,7 @@ Key accomplishments:
 Data Cleaning
 ---
 I got the data from <a href="https://www.phmsa.dot.gov/data-and-statistics/pipeline/data-and-statistics-overview" target="_blank">*Federal Pipeline and Hazardous Materials Safety Administration (PHMSA)*</a>. Since it spans from 1986 to 2022, the format was inconsistent across three different Excel files, each with unique formatting. About 80% of my work involved data cleaning and preprocessing. I’ve attached my Jupyter Notebook file for anyone interested in exploring it further. *Side note*: I also merged data on Temperature and Extreme Storm Events from 1986 to 2022 (sourced from <a href="https://www.noaa.gov/" target="_blank">*NOAA.gov*</a>), as these factors are also susceptible to change due to climate change. Ultimately, this was not used in the visualization, but it's good I kept it since you can see more work inside the Notebook!  
-Jupyter Notebook - <a href="https://github.com/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb" target="_blank">GitHub</a> <a href="https://nbviewer.org/github/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb" target="_blank">NBViewer</a>
+Jupyter Notebook - <a href="https://github.com/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb" target="_blank">GitHub</a> | <a href="https://nbviewer.org/github/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb" target="_blank">NBViewer</a>
 
 Interactive Dashboard
 ---
@@ -21,7 +21,7 @@ View the <a href="https://kikossik.pythonanywhere.com/" target="_blank">full das
 
 SBU Economics Conference and URECA
 ---
-I got to present my research at the **SBU Economics Conference**, which was a cool way to share my work with others. I also put together a poster for **URECA** as part of the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">**EACC VIP**</a> team with Prof. Halada, and it was a great experience getting our project out there for more people to see.  
+I got to present my research at the **SBU Economics Conference**, and I also put together a poster for **URECA** as part of the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">**EACC VIP**</a> team with Prof. Halada. It was a great experience getting our project out there for more people to see. I have attached my poster below, where you can see my work in researching about the topic and creating better visualizations that tell the story better.  
 <img src='/images/poster.PNG'>
 
 
