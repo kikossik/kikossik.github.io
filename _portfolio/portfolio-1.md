@@ -6,7 +6,7 @@ collection: portfolio
 ## Key accomplishments:
 - Created an interactive dashboard highlighting high-risk geographical areas prone to damage, enabling material scientists to target these areas for developing anti-crack and corrosion-resistant coatings for the pipelines carrying Hazardous Liquids.
 - Presented research at the SBU Economics Conference and showcased a poster for the [EACC VIP](https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)) team with Prof. Halada at the URECA Symposium.
-
+[GitHub](https://github.com/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb) [NBViewer](https://nbviewer.org/github/kikossik/kikossik.github.io/blob/master/files/notebooks/oil_gas_spill.ipynb)
 ---
 ### 1 - Data Cleaning
 I got the data from [*Federal Pipeline and Hazardous Materials Safety Administration (PHMSA)*](https://www.phmsa.dot.gov/data-and-statistics/pipeline/data-and-statistics-overview). Since it spans from 1986 to 2022, the format was inconsistent across three different Excel files, each with unique formatting. About 80% of my work involved data cleaning and preprocessing. I’ve attached my Jupyter Notebook file for anyone interested in exploring it further.  
