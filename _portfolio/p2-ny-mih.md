@@ -42,16 +42,11 @@ This map visualizes the spatial patterns of property sales density, Mandatory In
 - MIH zones often overlap with areas of high sales density, however, most of the MIH zones are designed in poor neighborhoods.  
 - With commercial zones, it is evident that they are primarily prominent in areas with the highest Sales, such as Manhattan.  
 
-**NYC Housing Affordability**
-
-- **Rental Affordability at 80% AMI**  
-  ![Rental Affordability](/images/rent_afford_80_ami.png)
-
-- **Median Income for Renters**  
-  ![Median Income](/images/median_income_rent.png)
-
-- **Median Rent**  
-  ![Median Rent](/images/median_rent.png)
+| **NYC Housing Affordability**      |            |
+|------------------------------------|------------|
+| **Rental Affordability at 80% AMI** | ![Rental Affordability](/images/rent_afford_80_ami.png) |
+| **Median Income for Renters**      | ![Median Income](/images/median_income_rent.png)        |
+| **Median Rent**                    | ![Median Rent](/images/median_rent.png)   
 
 
 **Takeaway**  
