@@ -11,7 +11,7 @@ Key accomplishments:
 
 Key Goals and Project Description
 ---
-This project focuses on analyzing housing affordability in New York City using detailed datasets on renter incomes, rental prices, and zoning policies. The goal is to evaluate how well current metrics, such as Area Median Income (AMI) affordability, reflect the real affordability challenges faced by renters in different community districts. By computing and comparing affordability metrics, we aim to identify discrepancies, understand spatial affordability patterns, and provide insights into the effectiveness of existing housing policies, including Mandatory Inclusionary Housing (MIH) programs.
+This project focuses on analyzing housing affordability in New York City using detailed datasets on renter incomes, rental prices, and zoning policies. The goal is to evaluate how well current metrics, such as Area Median Income (AMI) affordability, reflect the real affordability challenges faced by renters in different community districts. By computing and comparing affordability metrics, we aim to identify discrepancies, understand spatial affordability patterns, and provide insights into the effectiveness of existing housing policies, including <a href="https://www.nyc.gov/site/planning/plans/mih/mandatory-inclusionary-housing.page" target="_blank">Mandatory Inclusionary Housing (MIH)</a> programs.
 
 Brief Preliminaries to The Problem
 ---
@@ -45,13 +45,13 @@ This map visualizes the spatial patterns of property sales density, Mandatory In
 **NYC Housing Affordability**
 
 - **Rental Affordability at 80% AMI**  
-  ![Rental Affordability](./images/rent_afford_80_ami.png)
+  ![Rental Affordability](/images/rent_afford_80_ami.png)
 
 - **Median Income for Renters**  
-  ![Median Income](./images/median_income_rent.png)
+  ![Median Income](/images/median_income_rent.png)
 
 - **Median Rent**  
-  ![Median Rent](./images/median_rent.png)
+  ![Median Rent](/images/median_rent.png)
 
 
 **Takeaway**  
