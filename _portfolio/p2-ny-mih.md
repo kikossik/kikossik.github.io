@@ -42,14 +42,20 @@ This map visualizes the spatial patterns of property sales density, Mandatory In
 - MIH zones often overlap with areas of high sales density, however, most of the MIH zones are designed in poor neighborhoods.  
 - With commercial zones, it is evident that they are primarily prominent in areas with the highest Sales, such as Manhattan.  
 
-| **NYC Housing Affordability**      |            |
-|------------------------------------|------------|
+NYC Housing Affordability
+---
+| Category                           | Visualization                                  |
+|------------------------------------|-----------------------------------------------|
 | **Rental Affordability at 80% AMI** | ![Rental Affordability](/images/rent_afford_80_ami.png) |
 | **Median Income for Renters**      | ![Median Income](/images/median_income_rent.png)        |
-| **Median Rent**                    | ![Median Rent](/images/median_rent.png)   
+| **Median Rent**                    | ![Median Rent](/images/median_rent.png)                |
+
+Statistical Analysis
+---
 
 
-**Takeaway**  
+Takeway
+---
 -The maps highlight a clear spatial correlation: areas with higher median incomes (Map 2) also have higher median rents (Map 3). Manhattan and parts of Brooklyn dominate these categories, suggesting significant economic disparities between boroughs.  
 -Rental affordability (Map 1) is low in high-income, high-rent areas, emphasizing the lack of affordable housing in wealthier districts. Conversely, outer boroughs like the Bronx and Staten Island, with lower incomes and rents, provide better affordability.  
 -The maps collectively underscore economic segregation in NYC. Wealthier populations and high rents are clustered in central and gentrified areas, while more affordable rents and lower incomes are prevalent in peripheral districts.
