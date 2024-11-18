@@ -38,30 +38,36 @@ Visualizing the Data
 **NYC Housing Dynamics**  
 This map visualizes the spatial patterns of property sales density 
 <span style="
-  background: linear-gradient(90deg, rgba(255,0,0,0.2) 0%, rgba(255,0,0,0.8) 100%);
+  background: linear-gradient(120deg, rgba(255,0,0,0.1) 25%, rgba(255,0,0,0.4) 50%, rgba(255,0,0,0.1) 75%);
+  background-size: 200% 200%;
   padding: 2px 6px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255,0,0,0.4);
+  border-radius: 4px;
   color: black;
   font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  animation: waveEffect 2s infinite linear;
 ">red</span>, 
 Mandatory Inclusionary Housing (MIH) zones 
 <span style="
-  background: linear-gradient(90deg, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0.8) 100%);
+  background: linear-gradient(120deg, rgba(0,0,255,0.1) 25%, rgba(0,0,255,0.4) 50%, rgba(0,0,255,0.1) 75%);
+  background-size: 200% 200%;
   padding: 2px 6px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,255,0.4);
-  color: white;
+  border-radius: 4px;
+  color: black;
   font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  animation: waveEffect 2s infinite linear;
 ">blue</span>, 
 and commercial zoning areas 
 <span style="
-  background: linear-gradient(90deg, rgba(255,255,0,0.2) 0%, rgba(255,255,0,0.8) 100%);
+  background: linear-gradient(120deg, rgba(255,255,0,0.1) 25%, rgba(255,255,0,0.4) 50%, rgba(255,255,0,0.1) 75%);
+  background-size: 200% 200%;
   padding: 2px 6px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255,255,0,0.4);
+  border-radius: 4px;
   color: black;
   font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  animation: waveEffect 2s infinite linear;
 ">yellow</span> 
 in New York City.
 
