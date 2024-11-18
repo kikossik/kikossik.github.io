@@ -36,7 +36,6 @@ Community Districts shapefiles with demographic and economic attributes, such as
 Visualizing the Data
 ---
 **NYC Housing Dynamics**  
-<h2>NYC Housing Affordability</h2>
 <p>
   This map visualizes the spatial patterns of property sales density 
   <span class="highlighted">red</span>, 
@@ -59,7 +58,6 @@ Visualizing the Data
   .highlighted {
     position: relative;
     color: black; /* Text color */
-    font-weight: bold;
   }
 
   .highlighted::before {
@@ -106,8 +104,5 @@ Statistical Analysis
 ---
 
 
-Takeway
+Important Conclusions
 ---
--The maps highlight a clear spatial correlation: areas with higher median incomes (Map 2) also have higher median rents (Map 3). Manhattan and parts of Brooklyn dominate these categories, suggesting significant economic disparities between boroughs.  
--Rental affordability (Map 1) is low in high-income, high-rent areas, emphasizing the lack of affordable housing in wealthier districts. Conversely, outer boroughs like the Bronx and Staten Island, with lower incomes and rents, provide better affordability.  
--The maps collectively underscore economic segregation in NYC. Wealthier populations and high rents are clustered in central and gentrified areas, while more affordable rents and lower incomes are prevalent in peripheral districts.
