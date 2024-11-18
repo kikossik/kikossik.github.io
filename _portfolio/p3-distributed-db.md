@@ -32,12 +32,15 @@ python manage.py import_jobs "<location_to_the_csv_file>"
 ```
 ---> View the <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System/blob/main/django_project/blog/management/commands/import_jobs.py" target="_blank">bulk import here</a>  
 - **Bulk Removal**  
-Custom command is implemented to efficiently remove job listings within a specified date range from one or multiple databases. The command accepts the database name (*first_db*, *second_db*, *third_db*, or *all*) and the date range as arguments. Based on the selected database(s), the command uses Django's ORM to query jobs within the specified range. The matched jobs are then removed using the *delete* method, and the number of deleted jobs is tracked and displayed for each database. If all databases are selected, the total number of removed jobs is summarized at the end.
+Custom command is implemented to efficiently remove job listings within a specified date range from one or multiple databases. The command accepts the database name (*first_db*, *second_db*, *third_db*, or *all*) and the date range as arguments. Based on the selected database(s), the command uses Django's ORM to query jobs within the specified range. The matched jobs are then removed using the *delete* method, and the number of deleted jobs is tracked and displayed for each database. If all databases are selected, the total number of removed jobs is summarized at the end.  
 To use the command, the developer needs to run this in the command line from the root directory of the Django project  
 ```
 python manage.py remove_jobs "<choice of db selection>" "<start_date>" "<end_date>"
 ```
 ---> View the <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System/blob/main/django_project/blog/management/commands/remove_jobs.py" target="_blank">bulk removal here</a>  
+- **Scraper**
+Scraper to gather job postings from LinkedIn using a combination of Selenium for navigating dynamic web pages and BeautifulSoup for parsing HTML content. The function automates job searches by inputting a job title, location, and optional page count, iteratively scrolling through job listings and extracting details like job title, company, location, description, salary, and more. The collected data is cleaned and saved into a structured CSV file using pandas.  
+---> View the <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System/blob/main/linkedin_scrape.py" target="_blank">scraper here</a>  
 
 
-You can find the full project on <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System" target="_blank">GitHub</a>, where you can fork or set it up on your local machine. Comprehensive documentation along with the Python script for scraping job posting data using from LinkedIn is provided.  
+You can find the full project on <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System" target="_blank">GitHub</a>, where you can fork or set it up on your local machine. Comprehensive documentation for the setup is provided there.
