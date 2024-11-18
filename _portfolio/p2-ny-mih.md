@@ -44,8 +44,8 @@ This map visualizes the spatial patterns of property sales density, Mandatory In
 
 NYC Housing Affordability
 ---
-| Category                           | Visualization                                  |
-|------------------------------------|-----------------------------------------------|
+| Category          | Visualization           |
+|------------------------------------|------------|
 | **Rental Affordability at 80% AMI** | ![Rental Affordability](/images/rent_afford_80_ami.png) |
 | **Median Income for Renters**      | ![Median Income](/images/median_income_rent.png)        |
 | **Median Rent**                    | ![Median Rent](/images/median_rent.png)                |
