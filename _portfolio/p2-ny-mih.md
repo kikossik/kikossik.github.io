@@ -36,40 +36,54 @@ Community Districts shapefiles with demographic and economic attributes, such as
 Visualizing the Data
 ---
 **NYC Housing Dynamics**  
-This map visualizes the spatial patterns of property sales density 
-<span style="
-  background: linear-gradient(120deg, rgba(255,0,0,0.1) 25%, rgba(255,0,0,0.4) 50%, rgba(255,0,0,0.1) 75%);
-  background-size: 200% 200%;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
-  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-  animation: waveEffect 2s infinite linear;
-">red</span>, 
-Mandatory Inclusionary Housing (MIH) zones 
-<span style="
-  background: linear-gradient(120deg, rgba(0,0,255,0.1) 25%, rgba(0,0,255,0.4) 50%, rgba(0,0,255,0.1) 75%);
-  background-size: 200% 200%;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
-  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-  animation: waveEffect 2s infinite linear;
-">blue</span>, 
-and commercial zoning areas 
-<span style="
-  background: linear-gradient(120deg, rgba(255,255,0,0.1) 25%, rgba(255,255,0,0.4) 50%, rgba(255,255,0,0.1) 75%);
-  background-size: 200% 200%;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
-  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-  animation: waveEffect 2s infinite linear;
-">yellow</span> 
-in New York City.
+<h2>NYC Housing Affordability</h2>
+<p>
+  This map visualizes the spatial patterns of property sales density 
+  <span class="highlighted">red</span>, 
+  Mandatory Inclusionary Housing (MIH) zones 
+  <span class="highlighted">blue</span>, 
+  and commercial zoning areas 
+  <span class="highlighted">yellow</span> in New York City.
+</p>
+
+<!-- SVG for the wavy highlight filter -->
+<svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
+  <filter id="wavyHighlight" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="noise" seed="1" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" />
+  </filter>
+</svg>
+
+<!-- CSS for the highlight effect -->
+<style>
+  .highlighted {
+    position: relative;
+    color: black; /* Text color */
+    font-weight: bold;
+  }
+
+  .highlighted::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: hsla(0, 100%, 50%, 0.3); /* Red highlight */
+    filter: url(#wavyHighlight);
+    z-index: -1;
+    transform: translate(-0.2em, -0.2em) skew(7deg, 0);
+    border-radius: 4px; /* Rounded highlight */
+  }
+
+  .highlighted:nth-child(2)::before {
+    background: hsla(240, 100%, 50%, 0.3); /* Blue highlight */
+  }
+
+  .highlighted:nth-child(3)::before {
+    background: hsla(60, 100%, 50%, 0.3); /* Yellow highlight */
+  }
+</style>
 
 <img src='/images/heatmap.png'>  
 - The heatmap reveals that Manhattan is the epicenter of property sales. Peripheral areas in Brooklyn and Queens also show high activity, possibly due to spillover effects as people and businesses move out of Manhattan to relatively more affordable areas.  
