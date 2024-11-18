@@ -10,4 +10,10 @@ Key accomplishments:
 - The hash function for partitioning was calculated by adding up the ASCII values of all characters in the title, then applying a modulo operation by 3 (to match the number of databases) to determine the target database (<a href="https://pages.cs.wisc.edu/~siff/CS367/Notes/hash.html" target="_blank">inspiration from here</a>). This approach distributes data evenly and reduces retrieval time by ensuring balanced database loads.
 - Data scraping from LinkedIn Jobs using Selenium WebDriver for navigation and BeautifulSoup for HTML parsing, simulating a robust and comprehensive job postings dataset.
 
-You can find the full project on <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System" target="_blank">GitHub</a>, where you can fork or set it up on your local machine. Comprehensive documentation, along with the Python script for scraping job posting data using from LinkedIn.
+Cool Features
+---
+- ### Hash Function
+You can find the full project on <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System" target="_blank">GitHub</a>, where you can fork or set it up on your local machine. Comprehensive documentation along with the Python script for scraping job posting data using from LinkedIn is provided.  
+- ### Bulk Import
+blah blah  
+- ### Bulk Removal
