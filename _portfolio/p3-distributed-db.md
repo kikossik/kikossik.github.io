@@ -12,8 +12,8 @@ Key accomplishments:
 
 Cool Features
 ---
-- ### Hash Function
+### Hash Function
 You can find the full project on <a href="https://github.com/kikossik/Job-Posting-Distributed-Database-Management-System" target="_blank">GitHub</a>, where you can fork or set it up on your local machine. Comprehensive documentation along with the Python script for scraping job posting data using from LinkedIn is provided.  
-- ### Bulk Import
+### Bulk Import
 blah blah  
 - ### Bulk Removal
