@@ -36,7 +36,35 @@ Community Districts shapefiles with demographic and economic attributes, such as
 Visualizing the Data
 ---
 **NYC Housing Dynamics**  
-This map visualizes the spatial patterns of property sales density (<span style="background-color: red; color: white;">red</span>), Mandatory Inclusionary Housing (MIH) zones (<span style="background-color: blue; color: white;">blue</span>), and commercial zoning areas (<span style="background-color: yellow; color: black;">yellow</span>) in New York City.
+This map visualizes the spatial patterns of property sales density 
+<span style="
+  background: linear-gradient(90deg, rgba(255,0,0,0.2) 0%, rgba(255,0,0,0.8) 100%);
+  padding: 2px 6px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,0,0,0.4);
+  color: black;
+  font-weight: bold;
+">red</span>, 
+Mandatory Inclusionary Housing (MIH) zones 
+<span style="
+  background: linear-gradient(90deg, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0.8) 100%);
+  padding: 2px 6px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,255,0.4);
+  color: white;
+  font-weight: bold;
+">blue</span>, 
+and commercial zoning areas 
+<span style="
+  background: linear-gradient(90deg, rgba(255,255,0,0.2) 0%, rgba(255,255,0,0.8) 100%);
+  padding: 2px 6px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,255,0,0.4);
+  color: black;
+  font-weight: bold;
+">yellow</span> 
+in New York City.
+
 <img src='/images/heatmap.png'>  
 - The heatmap reveals that Manhattan is the epicenter of property sales. Peripheral areas in Brooklyn and Queens also show high activity, possibly due to spillover effects as people and businesses move out of Manhattan to relatively more affordable areas.  
 - MIH zones often overlap with areas of high sales density, however, most of the MIH zones are designed in poor neighborhoods.  
