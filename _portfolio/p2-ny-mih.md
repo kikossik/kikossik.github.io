@@ -43,7 +43,7 @@ This map visualizes the spatial patterns of property sales density, Mandatory In
 - With commercial zones, it is evident that they are primarily prominent in areas with the highest Sales, such as Manhattan.  
 
 NYC Housing Affordability
----
+
 | Category          | Visualization           |
 |------------------------------------|------------|
 | **Rental Affordability at 80% AMI** | ![Rental Affordability](/images/rent_afford_80_ami.png) |
