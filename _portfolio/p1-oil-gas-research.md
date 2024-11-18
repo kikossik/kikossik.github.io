@@ -16,12 +16,12 @@ I got the data from <a href="https://www.phmsa.dot.gov/data-and-statistics/pipel
 
 Interactive Dashboard
 ---
-I had the opportunity to integrate my research with **CSE 332 - Introduction to Scientific Visualization** class taught by Prof. Mueller, where I created this interactive dashboard. It was an awesome learning experience, especially since I had to learn **D3.js** and code everything from scratch – from the axes to the visuals and animations. One thing I noticed, though, is that having too many categories in the bar plot made it tough to see things clearly. Looking back, it would’ve been better to keep fewer categories or maybe even just stick to the map as it’s the key element for identifying high-risk areas prone to pipeline damage. Overall, I learned a ton about keeping things clear and knowing what to focus on when building a solid graph or dashboard.  
+I had the opportunity to integrate my research with **CSE 332 - Introduction to Scientific Visualization** class taught by Prof. Mueller, where I created this interactive dashboard. It was a great learning experience, especially since I had to learn **D3.js** and code everything from scratch. One thing I noticed, though, is that having too many categories in the bar plot made it tough to see things clearly. Looking back, it would’ve been better to keep fewer categories or maybe even just stick to the map as it is the key element for identifying high-risk areas prone to pipeline damage.  
 ---> View the <a href="https://kikossik.pythonanywhere.com/" target="_blank">full dasbhoard here</a>
 
 SBU Economics Conference and URECA
 ---
-I got to present my research at the **SBU Economics Conference**, and I also put together a poster for **URECA** as part of the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">**EACC VIP**</a> team with Prof. Halada. It was a great experience getting our project out there for more people to see. I have attached my poster below, where you can see my work in researching about the topic and creating visualizations to help capture the story better.  
+I got to present my research at the **SBU Economics Conference**, and I also put together a poster for **URECA** as part of the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">**EACC VIP**</a> team with Prof. Halada. It was a great experience getting our project out there for more people to see. I have attached my poster below, where you can see my work in researching about the topic and creating more visualizations to help capture the story better.  
 <img src='/images/poster.PNG'>
 
 
