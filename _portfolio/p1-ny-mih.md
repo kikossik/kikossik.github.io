@@ -113,7 +113,9 @@ This analysis examines the relationship between median rent prices, median incom
 - It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.  
 
 <img src="/images/reg1.PNG" style="display: block; margin: 0 auto;">  
-<code>**MedianRentPrice** = 0.014 × MedianIncomeForRenters - 0.00001 × AverageSalesPriceCD + 748.599</code>
+```
+MedianRentPrice = 0.014 × MedianIncomeForRenters - 0.00001 × AverageSalesPriceCD + 748.599
+```
 The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices, so this is definitely what we want to see.  
 
 **Understanding drivers of Sales Prices**  
@@ -123,7 +125,9 @@ This analysis examines the relationship between Average Sales Price per Communit
 - Still, the scatterplot shows a positive linear relationship between Median Homeowner Income and Average Sales Price per CD, and a weaker but still positive relationship is observed between Median Rent Price and Average Sales Price per CD as well.  
 
 <img src='/images/reg2.PNG' style="display: block; margin: 0 auto;">  
-<code>**AverageSalesPriceCD** = 23.470 × MedianHomeownerIncome - 918,144.700  </code>
+```
+AverageSalesPriceCD = 23.470 × MedianHomeownerIncome - 918,144.700
+```
 The regression analysis highlights that Median Homeowner Income significantly predicts Average Sales Price per CD, indicating that higher homeowner incomes correspond to higher sales prices. However, the model's **R²** of *0.260* shows that only *26%* of the variability in sales prices is explained, suggesting sales prices are influenced by a broader set of factors beyond homeowner income.  
 
 In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an **R²** of *0.910* in their model, indicating that renter incomes account for *91%* of the variability in rents. Additionally, the **standard error** of Median Homeowner Income in the sales regression (*0.166*) is nearly **8,000** times larger than the **standard error** of Median Income for Renters in the rent regression (*0.00002*), reflecting the tighter relationship between renter incomes and rent prices.  
