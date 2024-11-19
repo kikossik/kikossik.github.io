@@ -25,7 +25,7 @@ Mandatory Inclusionary Housing (MIH) is a zoning tool in NYC requiring developer
 **Custom Affordability Metric**  
 This project compares AMI-based metrics with those tailored to median renter incomes in community districts, highlighting gaps and evaluating alignment with actual economic conditions. Formulas are attached at the end of the project.   
 **Why Calculate Affordability This Way?**  
-The "one-third of income" rule is a practical benchmark for housing affordability, but AMI-based thresholds can overgeneralize in diverse areas like NYC. District-specific metrics, reflecting local renter incomes, provide a clearer picture of affordability challenges.  
+The "one-third of income" rule is a practical benchmark for housing affordability, but AMI-based thresholds can overgeneralize in diverse areas like NYC. District-specific metrics, reflecting local renter incomes, provide a clearer picture of affordability challenges while still using the "one-third" rule.  
 
 Data Description
 ---
