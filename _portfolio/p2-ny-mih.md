@@ -36,6 +36,7 @@ Community Districts shapefiles with demographic and economic attributes, such as
 Visualizing the Data
 ---
 **NYC Housing Dynamics**  
+
 <p>
   This map visualizes the spatial patterns of  
   <span class="highlighted">property sales density</span>, Mandatory Inclusionary 
@@ -135,12 +136,13 @@ Before we continue, I want to remind you what the goal of this project was - und
 This map visualizes differences in housing affordability across New York City's Community Districts by comparing affordability under the AMI-based metric and our custom metric - "one-third of income" per CD. Districts shaded red indicate areas where the two affordability measures diverge ("TRUE"), while blue districts show alignment between the metrics ("FALSE").  
 
 - Concentration of Differences in Lower-Income Areas:
-The red regions are largely concentrated in districts with lower-income populations, particularly in outer boroughs like the Bronx and parts of Brooklyn. These districts are more likely to have higher discrepancies between AMI-based affordability and local renter income-based metrics.
+The red regions are largely concentrated in districts with lower-income populations, particularly in outer boroughs like the Bronx and parts of Brooklyn. These districts are more likely to have higher discrepancies between AMI-based affordability and local renter income-based metrics.  
 This suggests that AMI-based thresholds overestimate affordability in these regions, as they fail to align with the actual economic conditions of renters.
 - Alignment in Higher-Income Areas:
 Blue regions, indicating agreement between the metrics, are more prominent in higher-income districts, particularly in Manhattan and affluent parts of Queens. In these areas, AMI-based affordability more accurately reflects local economic realities due to smaller income disparities.
 -,Implications of Discrepancies:
 The map underscores the limitations of AMI-based affordability metrics, which often use citywide income averages that mask district-level income disparities. In lower-income districts, this leads to a mismatch, labeling housing as "affordable" when it is not genuinely affordable for local residents.  
   
-  
+Out of 59 Community Districts, 29 districts (49%) show differences between the AMI-based and custom affordability metrics.  
+In districts with differences, the average affordability gap is $15,752.38.  
 This analysis highlights the systemic flaws in standardized affordability metrics like AMI, particularly for lower-income districts. By relying on a custom affordability measure tied to median renter income, the project reveals significant gaps in how affordability is calculated and understood. These discrepancies emphasize the need for more nuanced, location-specific policies to better address affordability challenges in NYC's most vulnerable areas.
