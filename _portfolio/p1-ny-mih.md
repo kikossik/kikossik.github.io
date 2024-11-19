@@ -8,7 +8,7 @@ Key accomplishments:
 ---
 - Compared Area Median Income (AMI)-based affordability metrics for <a href="https://www.nyc.gov/site/planning/plans/mih/mandatory-inclusionary-housing.page" target="_blank">Mandatory Inclusionary Housing (MIH)</a> with a custom, income-specific approach across all 59 Community Districts of NYC.
 - Identified that **29** districts **(49%)** show affordability differences between metrics, with an average gap of **$15,752.38**, highlighting significant flaws of MIH policy.
-- Demonstrated that Median Renter Income explains **91%** of rent price variation *(R²: 0.910)*, while sales prices are influenced by broader factors, with a weaker explanatory power *(R²: 0.260)*.
+- Demonstrated that Median Renter Income explains **91%** of rent price variation, while sales prices are influenced by broader factors, with a weaker explanatory power.
 - Developed interactive maps and plots to highlight affordability misalignments, emphasizing differences in economically vulnerable regions like the Bronx and Brooklyn.
 - Provided insights on the limitations of AMI-based policies, while suggesting a better approach of calculating affordability based on local median renter incomes tailored to the economic realities of individual Community Districts.  
 
