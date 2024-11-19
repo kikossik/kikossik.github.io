@@ -6,16 +6,19 @@ collection: portfolio
 
 Key accomplishments:
 ---
-- nlah nlah
-- more blah blah
+- Compared Area Median Income (AMI)-based affordability metrics for <a href="https://www.nyc.gov/site/planning/plans/mih/mandatory-inclusionary-housing.page" target="_blank">Mandatory Inclusionary Housing (MIH)</a> with a custom, income-specific approach across all 59 Community Districts of NYC.
+- Identified that 29 districts (49%) show affordability differences between metrics, with an average gap of $15,752.38, highlighting significant flaws of MIH policy.
+- Demonstrated that Median Renter Income explains 91% of rent price variation (R²: 0.910), while sales prices are influenced by broader factors, with a weaker explanatory power (R²: 0.260).
+- Developed interactive maps and plots to highlight affordability misalignments, emphasizing differences in economically vulnerable regions like the Bronx and Brooklyn.
+- Provided insights on the limitations of AMI-based policies, while suggesting a better approach of calculating affordability based on local median renter incomes tailored to the economic realities of individual Community Districts.
 
 Key Goals and Project Description
 ---
-This project focuses on analyzing housing affordability in New York City using detailed datasets on renter incomes, rental prices, and zoning policies. The goal is to evaluate how well current metrics, such as Area Median Income (AMI) affordability, reflect the real affordability challenges faced by renters in different community districts. By computing and comparing affordability metrics, we aim to identify discrepancies, understand spatial affordability patterns, and provide insights into the effectiveness of existing housing policies, including <a href="https://www.nyc.gov/site/planning/plans/mih/mandatory-inclusionary-housing.page" target="_blank">Mandatory Inclusionary Housing (MIH)</a> programs.
+This project focuses on analyzing housing affordability in New York City using detailed datasets on renter incomes, rental prices, and zoning policies. The goal is to evaluate how well current metrics, such as Area Median Income (AMI) affordability, reflect the real affordability challenges faced by renters in different community districts. By computing and comparing affordability metrics, we aim to identify discrepancies, understand spatial affordability patterns, and provide insights into the effectiveness of existing housing policies, including Mandatory Inclusionary Housing (MIH) programs.
 
 Brief Preliminaries to The Problem
 ---
-**MIH Affordability**  
+**MIH Affordability**   
 Mandatory Inclusionary Housing (MIH) is a zoning tool aimed at addressing housing affordability in New York City by requiring developers to include affordable units in new residential projects. However, affordability under MIH is calculated using fixed percentages of the Area Median Income (AMI), which may not accurately reflect the financial realities of local residents. This disconnect raises concerns about whether MIH truly meets the affordability needs of low- and middle-income households in high-demand areas.  
 **Affordability Analysis**  
 Housing affordability is traditionally assessed using benchmarks like AMI, but these standardized measures often fail to capture district-specific income variations. This project explores both AMI-based and custom metrics, where affordability is tailored to the median renter income in each community district. By comparing these approaches, we aim to identify gaps in affordability metrics and understand how well current models align with actual economic conditions.  
@@ -24,13 +27,13 @@ Using the widely accepted "one-third of income" rule to define affordability pro
 
 Data Description
 ---
-- **NYC Sales Data**  
+- <a href="https://www.nyc.gov/site/finance/property/property-rolling-sales-data.page" target="_blank">**NYC Sales Data**</a>  
 Contains records of property sales in NYC, including variables such as price, building category, and geographic coordinates.
-- **Commercial Zones Shapefiles**  
+- <a href="https://data.cityofnewyork.us/City-Government/New-York-Zones/8nxe-banu" target="_blank">**Commercial Zones**</a>  
 Spatial polygons representing commercial zones in NYC.
-- **MIH Zones**  
+- <a href="https://data.cityofnewyork.us/Housing-Development/Mandatory-Inclusionary-Housing-MIH-/bw8v-wzdr" target="_blank">**MIH Zones**</a> 
 Inclusionary housing zones under Mandatory Inclusionary Housing (MIH) regulations.
-- **Community Districts**  
+- <a href="https://data.cityofnewyork.us/City-Government/Community-Districts/yfnk-k7r4" target="_blank">**Community Districts**</a>  
 Community Districts shapefiles with demographic and economic attributes, such as rental affordability and median income for renters.
 
 Visualizing the Data
@@ -39,12 +42,11 @@ Visualizing the Data
 
 <p>
   This map visualizes the spatial patterns of  
-  <span class="highlighted">property sales density</span>, Mandatory Inclusionary 
-  <span class="highlighted">Housing (MIH) zones</span>, 
+  <span class="highlighted">property sales density</span>, 
+  <span class="highlighted">Mandatory Inclusionary Housing (MIH) zones</span>, 
   and  
   <span class="highlighted">commercial zoning areas</span> in New York City.
 </p>
-
 <!-- SVG for the wavy highlight filter -->
 <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
   <filter id="wavyHighlight" x="0" y="0" width="100%" height="100%">
@@ -52,7 +54,6 @@ Visualizing the Data
     <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" />
   </filter>
 </svg>
-
 <!-- CSS for the highlight effect -->
 <style>
   .highlighted {
@@ -115,7 +116,8 @@ This analysis examines the relationship between median rent prices, median incom
 - The scatterplot shows a very strong positive correlation between Median Rent Price and Median Income for Renters.
 - It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.  
 
-<img src="/images/reg1.PNG" style="display: block; margin: 0 auto;"> 
+<img src="/images/reg1.PNG" style="display: block; margin: 0 auto;">  
+**MedianRentPrice** = 0.014 × MedianIncomeForRenters - 0.00001 × AverageSalesPriceCD + 748.599    
 The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices, so this is definitely what we want to see.  
 
 **Understanding drivers of Sales Prices**  
@@ -124,7 +126,8 @@ This analysis examines the relationship between Average Sales Price per Communit
 - The scatterplots for the drivers of Sales Prices are weaker than for Rent Prices. 
 - Still, the scatterplot shows a positive linear relationship between Median Homeowner Income and Average Sales Price per CD, and a weaker but still positive relationship is observed between Median Rent Price and Average Sales Price per CD as well.  
 
-<img src='/images/reg2.PNG' style="display: block; margin: 0 auto;">
+<img src='/images/reg2.PNG' style="display: block; margin: 0 auto;">  
+**AverageSalesPriceCD** = 23.470 × MedianHomeownerIncome - 918,144.700    
 The regression analysis highlights that Median Homeowner Income significantly predicts Average Sales Price per CD, indicating that higher homeowner incomes correspond to higher sales prices. However, the model's R² of 0.260 shows that only 26% of the variability in sales prices is explained, suggesting sales prices are influenced by a broader set of factors beyond homeowner income.  
 In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an R² of 0.910 in their model, indicating that renter incomes account for 91% of the variability in rents. Additionally, the standard error of Median Homeowner Income in the sales regression (0.166) is nearly 8,000 times larger than the standard error of Median Income for Renters in the rent regression (0.00002), reflecting the tighter relationship between renter incomes and rent prices.  
 While both models show significant predictors (p < 0.01), the rent model's much higher R² and lower residual error suggest that rent prices are more directly and reliably determined by income levels compared to sales prices, which are influenced by a broader set of factors.
