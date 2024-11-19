@@ -3,6 +3,24 @@ title: "New York City Rental Affordability Analysis"
 excerpt: "<span>- Geospatial Analysis, Statistical Analysis, Data Visualization</span><br/>- R, ggplot2, sf, mapview, Regression Analysis<br/><br/>Conducted a comprehensive geospatial analysis of New York City rental affordability by comparing AMI-based metrics with localized affordability tailored to median renter incomes. Identified 29 districts (49%) with discrepancies, revealing an average affordability gap of $15,752.38. Regression analysis achieved R²: 0.910, showing income as the primary driver of rent prices, while sales prices were influenced by broader factors (R²: 0.260). Developed interactive maps to visualize disparities, highlighting vulnerabilities in lower-income districts like the Bronx and Brooklyn.<br/><img src='/images/heatmap.png'>"
 collection: portfolio
 ---
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
 Key accomplishments:
 ---
