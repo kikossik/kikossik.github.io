@@ -38,10 +38,10 @@ Visualizing the Data
 **NYC Housing Dynamics**  
 <p>
   This map visualizes the spatial patterns of  
-  <span class="highlighted">property sales density</span>, 
-  <span class="highlighted">Mandatory Inclusionary Housing (MIH) zones</span>, 
+  <span class="highlighted red">property sales density</span>, 
+  <span class="highlighted blue">Mandatory Inclusionary Housing (MIH) zones</span>, 
   and  
-  <span class="highlighted">commercial zoning areas</span> in New York City.
+  <span class="highlighted yellow">commercial zoning areas</span> in New York City.
 </p>
 
 <!-- SVG for the wavy highlight filter -->
