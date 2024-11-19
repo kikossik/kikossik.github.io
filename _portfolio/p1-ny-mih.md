@@ -1,6 +1,6 @@
 ---
 title: "New York City Rental Affordability Analysis"
-excerpt: "<span>- Geospatial Analysis, Statistical Analysis, Data Visualization</span><br/>- R, ggplot2, sf, mapview, Regression Analysis<br/><br/>Conducted a comprehensive geospatial analysis of New York City rental affordability by comparing AMI-based metrics with localized affordability tailored to median renter incomes. Identified 29 districts (49%) with discrepancies, revealing an average affordability gap of $15,752.38. Regression analysis achieved R²: 0.910, showing income as the primary driver of rent prices, while sales prices were influenced by broader factors (R²: 0.260). Developed interactive maps to visualize disparities, highlighting vulnerabilities in lower-income districts like the Bronx and Brooklyn.<br/>---><a href="https://www.nyc.gov/site/planning/plans/mih/mandatory-inclusionary-housing.page" target="_blank">R Notebook</a><br/><img src='/images/heatmap.png'>"
+excerpt: "<span>- Geospatial Analysis, Statistical Analysis, Data Visualization</span><br/>- R, ggplot2, sf, mapview, Regression Analysis<br/><br/>Conducted a comprehensive geospatial analysis of New York City rental affordability by comparing AMI-based metrics with localized affordability tailored to median renter incomes. Identified 29 districts (49%) with discrepancies, revealing an average affordability gap of $15,752.38. Regression analysis achieved R²: 0.910, showing income as the primary driver of rent prices, while sales prices were influenced by broader factors (R²: 0.260). Developed interactive maps to visualize disparities, highlighting vulnerabilities in lower-income districts like the Bronx and Brooklyn.<br/><img src='/images/heatmap.png'>"
 collection: portfolio
 ---
 
@@ -10,7 +10,8 @@ Key accomplishments:
 - Identified that **29** districts **(49%)** show affordability differences between metrics, with an average gap of **$15,752.38**, highlighting significant flaws of MIH policy.
 - Demonstrated that Median Renter Income explains **91%** of rent price variation *(R²: 0.910)*, while sales prices are influenced by broader factors, with a weaker explanatory power *(R²: 0.260)*.
 - Developed interactive maps and plots to highlight affordability misalignments, emphasizing differences in economically vulnerable regions like the Bronx and Brooklyn.
-- Provided insights on the limitations of AMI-based policies, while suggesting a better approach of calculating affordability based on local median renter incomes tailored to the economic realities of individual Community Districts.
+- Provided insights on the limitations of AMI-based policies, while suggesting a better approach of calculating affordability based on local median renter incomes tailored to the economic realities of individual Community Districts.  
+---> R Notebook - <a href="https://nbviewer.org/github/kikossik/kikossik.github.io/blob/master/files/notebooks/nyc_affordability.html" target="_blank">NBViewer</a>
 
 Key Goals and Project Description
 ---
