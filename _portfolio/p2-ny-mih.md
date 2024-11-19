@@ -7,7 +7,7 @@ collection: portfolio
 Key accomplishments:
 ---
 - Compared Area Median Income (AMI)-based affordability metrics for <a href="https://www.nyc.gov/site/planning/plans/mih/mandatory-inclusionary-housing.page" target="_blank">Mandatory Inclusionary Housing (MIH)</a> with a custom, income-specific approach across all 59 Community Districts of NYC.
-- Identified that **29** districts ***(49%)*** show affordability differences between metrics, with an average gap of **$15,752.38**, highlighting significant flaws of MIH policy.
+- Identified that **29** districts **(49%)** show affordability differences between metrics, with an average gap of **$15,752.38**, highlighting significant flaws of MIH policy.
 - Demonstrated that Median Renter Income explains **91%** of rent price variation *(R²: 0.910)*, while sales prices are influenced by broader factors, with a weaker explanatory power *(R²: 0.260)*.
 - Developed interactive maps and plots to highlight affordability misalignments, emphasizing differences in economically vulnerable regions like the Bronx and Brooklyn.
 - Provided insights on the limitations of AMI-based policies, while suggesting a better approach of calculating affordability based on local median renter incomes tailored to the economic realities of individual Community Districts.
@@ -41,39 +41,43 @@ Visualizing the Data
 ---
 **NYC Housing Dynamics**  
 
-<p>This map visualizes the spatial patterns of 
-   <span class="highlight-red">property sales density</span>, 
-   <span class="highlight-blue">Mandatory Inclusionary Housing (MIH) zones</span>, 
-   and <span class="highlight-yellow">commercial zoning areas</span> in New York City.
-</p>
+<p>This map visualizes the spatial patterns of <span class="highlight-red">property sales density</span>, <span class="highlight-blue">Mandatory Inclusionary Housing (MIH) zones</span>, and <span class="highlight-yellow">commercial zoning areas</span> in New York City.</p>
+
 <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
   <filter id="wavyHighlight" x="0" y="0" width="100%" height="100%">
     <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="noise" seed="1" />
     <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" />
   </filter>
 </svg>
+
 <style>
-  .highlight-red {
-    position: relative;
-    background: hsla(0, 70%, 50%, 0.3); /* Red highlight */
-    padding: 0.2em 0.2em;
-    filter: url(#wavyHighlight);
-    z-index: -1;
-  }
-  .highlight-blue {
-    position: relative;
-    background: hsla(240, 70%, 50%, 0.3); /* Blue highlight */
-    padding: 0.2em 0.2em;
-    filter: url(#wavyHighlight);
-    z-index: -1;
-  }
-  .highlight-yellow {
-    position: relative;
-    background: hsla(60, 70%, 50%, 0.3); /* Yellow highlight */
-    padding: 0.2em 0.2em;
-    filter: url(#wavyHighlight);
-    z-index: -1;
-  }
+.highlight-red, .highlight-blue, .highlight-yellow {
+  position: relative;
+}
+
+.highlight-red::before, .highlight-blue::before, .highlight-yellow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  padding: 0.2em 0.2em;
+  filter: url(#wavyHighlight);
+}
+
+.highlight-red::before {
+  background: hsla(0, 70%, 50%, 0.3);
+}
+
+.highlight-blue::before {
+  background: hsla(240, 70%, 50%, 0.3);
+}
+
+.highlight-yellow::before {
+  background: hsla(60, 70%, 50%, 0.3);
+}
 </style>
 
 <img src='/images/heatmap.png'>  
