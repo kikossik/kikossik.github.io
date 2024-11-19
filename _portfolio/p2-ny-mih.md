@@ -38,10 +38,11 @@ Visualizing the Data
 **NYC Housing Dynamics**  
 <p>
   This map visualizes the spatial patterns of  
-  <span class="highlighted red">property sales density</span>, 
-  <span class="highlighted blue">Mandatory Inclusionary Housing (MIH) zones</span>, 
+  <span class="highlighted">property sales density</span>,
+ 
+  <span class="highlighted">Mandatory Inclusionary Housing (MIH) zones</span>, 
   and  
-  <span class="highlighted yellow">commercial zoning areas</span> in New York City.
+  <span class="highlighted">commercial zoning areas</span> in New York City.
 </p>
 
 <!-- SVG for the wavy highlight filter -->
@@ -103,7 +104,7 @@ Statistical Analysis
 ---
 **Median Rent Price by Property Type**  
 <img src='/images/box.png'>  
-Before delving into the desired analysis, let's take a moment and look at this cool boxplot. This boxplot examines the distribution of median rent prices across various property types grouped into categories such as Residential, Condos & Co-ops, Commercial, Public & Cultural, and Other. It is obvious that Condos & Coops have the highest median rent prices on average than any other category. Residential properties have relatively consistent and moderate rent prices. We can observe a lot of variability in most of the property types.  
+Before investigating the drivers for rent and sales prices, let's take a moment and look at this cool boxplot. This boxplot examines the distribution of median rent prices across various property types grouped into categories such as Residential, Condos & Co-ops, Commercial, Public & Cultural, and Other. It is obvious that Condos & Coops have the highest median rent prices on average than any other category. Residential properties have relatively consistent and moderate rent prices. We can observe a lot of variability in most of the property types.  
 
 **Understanding drivers of Rent Prices**  
 This analysis examines the relationship between median rent prices, median income for renters, and average sales price per census district (CD).  
