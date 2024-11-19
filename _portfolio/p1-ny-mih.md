@@ -22,11 +22,11 @@ By computing and comparing affordability metrics, we aim to identify discrepanci
 Brief Preliminaries to The Problem
 ---
 **MIH Affordability**   
-Mandatory Inclusionary Housing (MIH) is a zoning tool aimed at addressing housing affordability in New York City by requiring developers to include affordable units in new residential projects. However, affordability under MIH is calculated using fixed percentages of the Area Median Income (AMI), which may not accurately reflect the financial realities of local residents. This disconnect raises concerns about whether MIH truly meets the affordability needs of low- and middle-income households in high-demand areas.  
+Mandatory Inclusionary Housing (MIH) is a zoning tool in NYC requiring developers to include affordable units in residential projects. However, affordability is based on fixed percentages of the Area Median Income (AMI), which often doesn't reflect local residents' financial realities.  
 **Affordability Analysis**  
-Housing affordability is traditionally assessed using benchmarks like AMI, but these standardized measures often fail to capture district-specific income variations. This project explores both AMI-based and custom metrics, where affordability is tailored to the median renter income in each community district. By comparing these approaches, we aim to identify gaps in affordability metrics and understand how well current models align with actual economic conditions.  
+This project compares AMI-based metrics with those tailored to median renter incomes in community districts, highlighting gaps and evaluating alignment with actual economic conditions.   
 **Why Calculate Affordability This Way?**  
-Using the widely accepted "one-third of income" rule to define affordability provides a practical lens to assess housing burdens. However, AMI-based thresholds can overgeneralize affordability, particularly in diverse cities like NYC where income levels vary significantly across districts. A district-specific metric, based on local renter incomes, offers a more accurate depiction of affordability challenges.
+The "one-third of income" rule is a practical benchmark for housing affordability, but AMI-based thresholds can overgeneralize in diverse areas like NYC. District-specific metrics, reflecting local renter incomes, provide a clearer picture of affordability challenges.  
 
 Data Description
 ---
@@ -118,7 +118,7 @@ This analysis examines the relationship between median rent prices, median incom
 ```
 MedianRentPrice = 0.014 × MedianIncomeForRenters - 0.00001 × AverageSalesPriceCD + 748.599
 ```
-The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices, so this is definitely what we want to see.  
+Median Renter Income directly drives rent prices and influences affordability, while Average Sales Prices per CD have a more indirect effect. This underscores the need for income-focused housing policies to tackle affordability challenges effectively. By minimizing predictors, the goal was to identiy the key factors shaping rent prices.  
 
 **Understanding drivers of Sales Prices**  
 This analysis examines the relationship between Average Sales Price per Community District (CD) and its predictors: Median Homeowner Income and Median Rent Price.
@@ -130,17 +130,59 @@ This analysis examines the relationship between Average Sales Price per Communit
 ```
 AverageSalesPriceCD = 23.470 × MedianHomeownerIncome - 918,144.700
 ```
-The regression analysis highlights that Median Homeowner Income significantly predicts Average Sales Price per CD, indicating that higher homeowner incomes correspond to higher sales prices. However, the model's **R²** of *0.260* shows that only *26%* of the variability in sales prices is explained, suggesting sales prices are influenced by a broader set of factors beyond homeowner income.  
 
-In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an **R²** of *0.910* in their model, indicating that renter incomes account for *91%* of the variability in rents. Additionally, the **standard error** of Median Homeowner Income in the sales regression (*0.166*) is nearly **8,000** times larger than the **standard error** of Median Income for Renters in the rent regression (*0.00002*), reflecting the tighter relationship between renter incomes and rent prices.  
+The regression analysis highlights the following:
+- **Sales Reg:** **Median Homeowner Income** significantly predicts **Average Sales Price per CD**, with higher homeowner incomes correlating to higher sales prices.
+  - **R²: 0.260** → Only 26% of the variability in sales prices is explained, indicating that sales prices depend on a broader range of factors.
+- **Rent Reg:** **Median Renter Income** shows a much stronger relationship with **Median Rent Prices**:
+  - **R²: 0.910** → 91% of rent price variability is explained by renter incomes.
+  - The **standard error** for **Median Homeowner Income** in the sales model (0.166) is nearly **8,000** times larger than the **standard error** for **Median Renter Income** in the rent model (0.00002), highlighting the tighter link between renter incomes and rents.
+- Both models show significant predictors (*p < 0.01*), but the **Rent Reg** model’s higher R² and lower residual error indicate that rent prices are more directly and reliably determined by incomes compared to **Sales Reg** sales prices, which are influenced by multiple factors. 
 
-While both models show significant predictors *(p < 0.01)*, the rent model's much higher R² and lower residual error suggest that rent prices are more directly and reliably determined by income levels compared to sales prices, which are influenced by a broader set of factors.
-
-What We Have Been Waiting For
+Affordability Calculations
 ---
 Before we continue, I want to remind you what the **goal** of this project was - understanding housing affordability in New York City by **comparing Mandatory Inclusionary Housing (MIH) standards**, which rely on fixed percentages of the Area Median Income (AMI), **with custom metrics tailored to district-specific renter incomes**.  
+
+**1. MIH Affordability:**  
+\[
+\text{AMI Affordability} = \frac{\text{AMI}}{3}
+\]
+MIH uses the Area Median Income (AMI) to determine the maximum affordable annual rent.  
+
+**2. Custom Affordability (Our Approach):**  
+\[
+\text{Our Affordability} = \frac{\text{Median Income for Renters per CD}}{3}
+\]
+This method uses the district-specific median income of renters instead of AMI.  
+
+**3. Annualized Rent:**  
+\[
+\text{Median Annual Rent} = \text{Median Rent Price} \times 12
+\]
+This converts monthly rent prices to annual values to compare with the affordability thresholds.  
+
+- **AMI-Based Dummy:**  
+\[
+\text{AMIDum} = 
+\begin{cases} 
+1 & \text{if } \text{AMI Affordability} \geq \text{Median Annual Rent} \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+- **Custom Dummy:**  
+\[
+\text{OurAMIDum} = 
+\begin{cases} 
+1 & \text{if } \text{Our Affordability} \geq \text{Median Annual Rent} \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+Now let's take a look if the housing is actually affordable.  
+
 <img src='/images/diff.png'>  
-This map visualizes differences in housing affordability across New York City's Community Districts by comparing affordability under the AMI-based metric and our custom metric - "one-third of income" per CD. Districts shaded red indicate areas where the two affordability measures diverge ("TRUE"), while blue districts show alignment between the metrics ("FALSE").  
+This map compares NYC Community Districts' housing affordability using AMI-based and the custom metrics. Red districts show divergence between the measures, while blue indicates alignment.
 
 - Concentration of Differences in Lower-Income Areas:  
 The red areas are mostly found in lower-income neighborhoods, especially in outer boroughs like the Bronx and parts of Brooklyn. In these areas, there is often a big gap between affordability based on Area Median Income (AMI) and what renters can actually afford based on their incomes. This shows that AMI-based measures may overestimate affordability in these regions, as they don’t match the real financial situations of renters.
