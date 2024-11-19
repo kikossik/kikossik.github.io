@@ -104,24 +104,24 @@ Statistical Analysis
 ---
 **Median Rent Price by Property Type**  
 <img src='/images/box.png'>  
-Before investigating the drivers for rent and sales prices, let's take a moment and look at this cool boxplot. This boxplot examines the distribution of median rent prices across various property types grouped into categories such as Residential, Condos & Co-ops, Commercial, Public & Cultural, and Other. It is obvious that Condos & Coops have the highest median rent prices on average than any other category. Residential properties have relatively consistent and moderate rent prices. We can observe a lot of variability in most of the property types.  
+Before investigating the drivers for rent and sales prices, let's take a moment and look at this cool boxplot. This boxplot examines the distribution of median rent prices across various property types grouped into categories such as Residential, Condos & Co-ops, Commercial, Public & Cultural, and Other. I am not going to emphasize on this part too much, but some quick observations:  
+- This plot illustrates the significant variation in rental affordability across different property types.  
+- While residential properties are generally more affordable, the variability in condos and commercial properties highlights the diversity of NYC's rental market.  
+- These results emphasize the importance of considering property types when assessing affordability or policy impacts, as broad averages can obscure critical disparities between groups.  
 
 **Understanding drivers of Rent Prices**  
-This analysis examines the relationship between median rent prices, median income for renters, and average sales price per census district (CD).  
+This analysis examines the relationship between median rent prices, median income for renters, and average sales price per community district (CD).  
 <img src='/images/scat1.png'>  
-Scatterplots reveal a strong positive correlation between renter income and rent prices, while the relationship between average sales price and rent prices is weaker but significant.
-<img src='/images/reg1.png'>  
-The regression model for predicting **Median Rent Price** is as follows:
-\[
-\text{MedianRentPrice} = 748.599 + (0.014 \times \text{MedianIncomeForRenters}) - (0.00001 \times \text{AverageSalesPriceCD})
-\]
-This model explains 91% of the variation in rent prices, showing that median income for renters has a significant positive effect on rent prices (\( \beta = 0.014 \), \( p < 0.01 \)). Interestingly, average sales price per CD negatively impacts rent prices (\( \beta = -0.00001 \), \( p < 0.01 \)).  
+- The scatterplot shows a very strong positive correlation between Median Rent Price and Median Income for Renters.
+- It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.
+<img src='/images/reg1.PNG'>  
+The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices. With an R² of 0.910, the model explains 91% of the variation in Median Rent Prices, demonstrating a strong fit and confirming the critical role of renter income in shaping rent affordability.
 
 **Understand drivers of Sales Prices**  
 This analysis investigates the factors influencing average sales prices per community district (CD) by examining their relationship with median homeowner income and median rent prices.  
 <img src='/images/scat2.png'>  
 Scatterplots reveal a positive correlation between median homeowner income and average sales prices, and average sales prices with median rent prices. However, the variation is definitely higher than in Rent price analysis.  
-<img src='/images/reg2.png'>  
+<img src='/images/reg2.PNG'>  
 The regression model for predicting **Average Sales Price per CD** is as follows:
 \[
 \text{AverageSalesPriceCD} = -918,144.700 + (23.470 \times \text{MedianHomeownerIncome})
