@@ -42,9 +42,9 @@ Visualizing the Data
 **NYC Housing Dynamics**  
 
 <p>This map visualizes the spatial patterns of 
-   <span class="highlight-background">property sales density</span>, 
-   <span class="highlight-background">Mandatory Inclusionary Housing (MIH) zones</span>, 
-   and <span class="highlight-background">commercial zoning areas</span> in New York City.
+   <span class="highlight-red">property sales density</span>, 
+   <span class="highlight-blue">Mandatory Inclusionary Housing (MIH) zones</span>, 
+   and <span class="highlight-yellow">commercial zoning areas</span> in New York City.
 </p>
 <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
   <filter id="wavyHighlight" x="0" y="0" width="100%" height="100%">
@@ -53,11 +53,24 @@ Visualizing the Data
   </filter>
 </svg>
 <style>
-  .highlight-background {
+  .highlight-red {
     position: relative;
-    background: hsla(120, 60%, 50%, 0.3);
+    background: hsla(0, 70%, 50%, 0.3); /* Red highlight */
     padding: 0.2em 0.2em;
-    transform: translate(-0.2em, -0.2em) skew(7deg, 0);
+    filter: url(#wavyHighlight);
+    z-index: -1;
+  }
+  .highlight-blue {
+    position: relative;
+    background: hsla(240, 70%, 50%, 0.3); /* Blue highlight */
+    padding: 0.2em 0.2em;
+    filter: url(#wavyHighlight);
+    z-index: -1;
+  }
+  .highlight-yellow {
+    position: relative;
+    background: hsla(60, 70%, 50%, 0.3); /* Yellow highlight */
+    padding: 0.2em 0.2em;
     filter: url(#wavyHighlight);
     z-index: -1;
   }
