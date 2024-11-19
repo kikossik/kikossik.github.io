@@ -38,8 +38,7 @@ Visualizing the Data
 **NYC Housing Dynamics**  
 <p>
   This map visualizes the spatial patterns of  
-  <span class="highlighted">property sales density</span>,
- 
+  <span class="highlighted">property sales density</span>, as well as 
   <span class="highlighted">Mandatory Inclusionary Housing (MIH) zones</span>, 
   and  
   <span class="highlighted">commercial zoning areas</span> in New York City.
@@ -113,24 +112,17 @@ Before investigating the drivers for rent and sales prices, let's take a moment 
 This analysis examines the relationship between median rent prices, median income for renters, and average sales price per community district (CD).  
 <img src='/images/scat1.png'>  
 - The scatterplot shows a very strong positive correlation between Median Rent Price and Median Income for Renters.
-- It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.
+- It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.  
 <img src='/images/reg1.PNG'>  
 The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices. With an R² of 0.910, the model explains 91% of the variation in Median Rent Prices, demonstrating a strong fit and confirming the critical role of renter income in shaping rent affordability.
 
 **Understand drivers of Sales Prices**  
-This analysis investigates the factors influencing average sales prices per community district (CD) by examining their relationship with median homeowner income and median rent prices.  
+This analysis examines the relationship between Average Sales Price per Community District (CD) and its predictors: Median Homeowner Income and Median Rent Price.
 <img src='/images/scat2.png'>  
-Scatterplots reveal a positive correlation between median homeowner income and average sales prices, and average sales prices with median rent prices. However, the variation is definitely higher than in Rent price analysis.  
+- The scatterplots for the drivers of Sales Prices are weaker than for Rent Prices. 
+- Still, the scatterplot shows a positive linear relationship between Median Homeowner Income and Average Sales Price per CD, and a weaker but still positive relationship is observed between Median Rent Price and Average Sales Price per CD as well.  
 <img src='/images/reg2.PNG'>  
-The regression model for predicting **Average Sales Price per CD** is as follows:
-\[
-\text{AverageSalesPriceCD} = -918,144.700 + (23.470 \times \text{MedianHomeownerIncome})
-\]
-The regression model explains 26% of the variation in average sales prices (\( R^2 = 0.260 \)). Median homeowner income has a significant positive effect (\( \beta = 23.470, p < 0.01 \)), suggesting that a $1,000 increase in homeowner income corresponds to an increase of $23,470 in average sales prices. The constant term, \( -918,144.700 \), represents the baseline sales price when all predictors are zero.
-
-
-
-
+The regression analysis highlights that Median Homeowner Income significantly predicts Average Sales Price per CD, with a positive coefficient of 23.470, indicating that higher homeowner incomes correspond to higher sales prices. However, the model's R² of 0.260 shows that only 26% of the variability in sales prices is explained, suggesting sales prices are influenced by a broader set of factors beyond homeowner income. In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an R² of 0.910 in their model, indicating that renter incomes account for 91% of the variability in rents. This comparison highlights that rent prices are more directly tied to income levels, while sales prices are likely shaped by a more complex features.
 
 Important Conclusions
 ---
