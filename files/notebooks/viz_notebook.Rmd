@@ -1,0 +1,637 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+R notebook yay
+Installing libraries
+
+```{r}
+rm(list=ls())
+library(sf)
+library(mapview)
+library(stars)
+library(terra)
+library(raster)
+library(ggplot2)
+library(data.table)
+library(units)
+library(dplyr)
+library(tidyr)
+library(stargazer)
+```
+
+```{r}
+Root <- "C:/Users/mobis/Downloads/RData"
+Path_In <- file.path(Root,  "NYC_Sales_2019.RData")
+PathOut <- file.path(Root)
+load( file=file.path(Path_In) )
+
+Path_Shapefiles <- file.path(Root, "Commercial_Poly_Proj")
+Path_Out <- file.path(Root)
+ShpFiles <- list.files(Path_Shapefiles, full.names=TRUE)
+LayerList <- st_layers( dsn=Path_Shapefiles )
+```
+
+```{r}
+Commercial_bounds <- st_read( dsn=Path_Shapefiles, layer=LayerList$name[1] )
+sapply(Commercial_bounds, class)
+sapply(Commercial_bounds, attributes)
+```
+
+```{r}
+#loading new shapefile
+Path_Shapefiles2 <- file.path(Root, "NYCMIH")
+Path_Out <- file.path(Root)
+NYCMIH <- list.files(Path_Shapefiles2, full.names=TRUE)
+print(NYCMIH)
+LayerList2 <- st_layers( dsn=Path_Shapefiles2 )
+print( LayerList2$name )
+```
+
+```{r}
+#mapping new shapefile
+MIHSF <- st_read( dsn=Path_Shapefiles2, layer=LayerList2$name[1] )
+names(MIHSF)
+View(MIHSF)
+sapply(MIHSF, class)
+sapply(MIHSF, attributes)
+```
+
+!!!!!!!Setting up the mapview FOR PORTFOLIO
+```{r}
+NYcom <- mapview(Commercial_bounds, color="red", col.regions="green", alpha.regions=0.8,
+                 map.types="OpenStreetMap.Mapnik")
+```
+
+```{r}
+library(leaflet)
+library(leaflet.extras)
+library(sf)
+
+# Reproject all datasets to WGS84
+Sales_draw <- st_transform(Sales, crs = 4326)  # Transform to WGS84
+MIHSF_draw <- st_transform(MIHSF, crs = 4326)
+Commercial_bounds_draw <- st_transform(Commercial_bounds, crs = 4326)
+
+# Extract coordinates from the reprojected Sales_sample
+Sales_coords <- st_coordinates(Sales_draw)
+
+# Create a data frame with longitude and latitude
+Sales_coords <- data.frame(
+  lon = Sales_coords[, 1],  # Longitude
+  lat = Sales_coords[, 2]   # Latitude
+)
+
+# Create the leaflet map with a reddish/pink gradient
+heatmap <- leaflet() %>%
+  addProviderTiles("CartoDB.DarkMatter") %>%
+  # Add the heatmap layer with a custom reddish gradient
+  addHeatmap(
+    lng = ~lon,
+    lat = ~lat,
+    data = Sales_coords,
+    blur = 5,
+    max = 1,
+    radius = 10,
+    gradient = c(
+      "0" = "#ffe6e6",  # Very light red
+      "1" = "#ff0000"
+    )
+  ) %>%
+  # Add MIHSF polygons
+  addPolygons(
+    data = MIHSF_draw,
+    color = "mediumturquoise",
+    weight = 4,
+    fillOpacity = 0.9,
+    group = "MIHSF"
+  ) %>%
+  # Add Commercial_bounds polygons
+  addPolygons(
+    data = Commercial_bounds_draw,
+    color = "yellow",
+    weight = 2,
+    fillOpacity = 0.9,
+    group = "Commercial Bounds"
+  ) %>%
+  # Add layers control
+  addLayersControl(
+    overlayGroups = c("Sales Heatmap", "MIHSF", "Commercial Bounds"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+```
+
+```{r}
+#loading new rdata||cdf
+PathIn <- file.path(Root, "Community_Districts_FurmanCenter.RData")
+PathOut <- file.path(Root)
+load( file=file.path(PathIn) )
+class(CommunityDistrictsFurman)
+st_crs(CommunityDistrictsFurman)
+sapply(CommunityDistrictsFurman, class)
+names(CommunityDistrictsFurman)
+
+CDF <- CommunityDistrictsFurman
+
+#loading next data ||NYC_CityCouncil_CommunityDistricts_2022Release.RData
+```
+
+```{r}
+PathIn <- file.path(Root, "NYC_CityCouncil_CommunityDistricts_2022Release.RData")
+PathOut <- file.path(Root)
+load( file=file.path(PathIn) )
+class(Community_Districts)
+st_crs(Community_Districts)
+sapply(Community_Districts, class)
+names(Community_Districts)
+#View( Community_Districts[1:10,])
+CD <- Community_Districts
+#View(CD)
+#joining spatial data and data
+mapview(CD)
+```
+
+```{r}
+CDF_merged <- merge(x=CD,y=CDF, by.x="BoroCD", by.y="CD_ID",all.x=TRUE)
+
+
+#selecting only 2019 data||in this case there are only 59 observations
+CDF_merged = CDF_merged[CDF_merged$Year %in%  c("2019"),]
+
+```
+
+```{r}
+#simple features
+st_as_sf(CDF_merged, coords = "geometry.y", proj = 4269)
+sapply(CDF_merged, class)
+st_crs(CDF_merged)
+#mapview of CDF
+mapview(CDF_merged, color="orange", col.regions="purple", alpha.regions=0.8)
+CDFm <- mapview(CDF_merged, color="orange", col.regions="purple", alpha.regions=0.8,
+                map.types="OpenStreetMap.Mapnik")
+#print(CDFm)
+```
+
+```{r}
+CDFm + mapview(MIHSF, color="orange", col.regions="blue", alpha.regions=0.8,
+               map.types="OpenStreetMap.Mapnik")
+```
+
+```{r}
+(CDF_merged$mih_count <- lengths(st_intersects(CDF_merged, MIHSF))) 
+mapview(CDF_merged)
+```
+```{r}
+Sales_CDF_merged <- st_join(Sales, CDF_merged, join=st_intersects, left=TRUE)
+nrow(Sales_CDF_merged)
+length(unique(Sales_CDF_merged[["BoroCD"]]))
+#trimming usable
+Sales_CDF_merged = Sales_CDF_merged[Sales_CDF_merged$usable %in%  c("True"),]
+### Creating the average price sales in each CD
+SalesPriceAverage <- aggregate(x = Sales_CDF_merged$price, 
+                               by = list(Sales_CDF_merged$BoroCD), FUN = mean)
+```
+
+```{r}
+Sales_CDF_merged <- merge(x=Sales_CDF_merged,y=SalesPriceAverage, by.x="BoroCD", by.y="Group.1",all.x=TRUE)
+#renaming x to averagesalespricecd
+names(Sales_CDF_merged)[names(Sales_CDF_merged) == 'x'] <- 'AverageSalesPriceCD'
+names(Sales_CDF_merged)
+```
+
+```{r}
+CDF_merged$AMI <- 96100
+```
+
+```{r}
+#trying to make our affordability column
+#var16 should be med rent income
+#var68 should be med rent price
+CDF_merged$ourAffordability <- CDF_merged$Var16 / 3
+View(CDF_merged[1:10,])
+#max affordable with AMI
+CDF_merged$AMIAffordability <- CDF_merged$AMI / 3
+
+#annualizing med rent
+CDF_merged$medannualrent <- CDF_merged$Var68 * 12
+
+
+#if statement creating dummys
+CDF_merged$AMIDum <- ifelse(CDF_merged$AMIAffordability >= CDF_merged$medannualrent, 1, 0)
+CDF_merged$ourAMIDum <- ifelse(CDF_merged$ourAffordability >= CDF_merged$medannualrent, 1, 0)
+View(CDF_merged)
+
+names(CDF_merged)[names(CDF_merged) == 'Var73'] <- 'Rental Affordability 80% AMI'
+names(CDF_merged)[names(CDF_merged) == 'Var16'] <- 'Median Income for Renters'
+names(CDF_merged)[names(CDF_merged) == 'Var68'] <- 'Median Rent'
+```
+!!!!!!!!!!!!!!!!!!!!!!
+```{r}
+#map ami 80% affordability
+#mapview(CDF_merged, zcol = "Rental Affordability 80% AMI", at = seq(5,95, 10), legend = TRUE)
+
+mapview(
+  CDF_merged,
+  zcol = "Rental Affordability 80% AMI",
+  at = seq(5, 95, 10),
+  col.regions = colorRampPalette(c("#ffe6e6", "#ff0000"))(10),  # Reddish gradient
+  legend = TRUE,
+  map.types = "CartoDB.DarkMatter",  # Dark map style
+  layer.name = "Rental Affordability 80% AMI"  # Custom layer title
+)
+```
+
+```{r}
+#map renters incomes
+#mapview(CDF_merged, zcol = "Median Income for Renters", at = seq(20000,140000, 20000), legend = TRUE)
+
+mapview(
+  CDF_merged,
+  zcol = "Median Income for Renters",
+  at = seq(20000, 140000, 20000),
+  col.regions = colorRampPalette(c("#ffe6e6", "#ff0000"))(7),  # Reddish gradient
+  legend = TRUE,
+  map.types = "CartoDB.DarkMatter",  # Dark map style
+  layer.name = "Median Income for Renters"
+)
+
+```
+
+```{r}
+#map renters price
+#mapview(CDF_merged, zcol = "Median Rent", at = seq(500,3000, 500), legend = TRUE)
+
+mapview(
+  CDF_merged,
+  zcol = "Median Rent",
+  at = seq(500, 3000, 500),
+  col.regions = colorRampPalette(c("#ffe6e6", "#ff0000"))(6),  # Reddish gradient
+  legend = TRUE,
+  map.types = "CartoDB.DarkMatter",  # Dark map style
+  layer.name = "Median Rent"
+)
+
+```
+
+```{r}
+#regression for renters
+RegRent <- lm(Var68~Var16+price, data=Sales_CDF_merged)
+summary(RegRent)
+```
+
+```{r}
+#copying data
+Sales_CDF_merged1 <- Sales_CDF_merged
+#trimming to 1 2 3 fam homes and usable
+Sales_CDF_merged$bldg_ctgy[Sales_CDF_merged$bldg_ctgy == "01 ONE FAMILY DWELLINGS"] <- "ForReg"
+Sales_CDF_merged$bldg_ctgy[Sales_CDF_merged$bldg_ctgy == "02 TWO FAMILY DWELLINGS"] <- "ForReg"
+Sales_CDF_merged$bldg_ctgy[Sales_CDF_merged$bldg_ctgy == "03 THREE FAMILY DWELLINGS"] <- "ForReg"
+Sales_CDF_merged = Sales_CDF_merged[Sales_CDF_merged$usable %in%  c("True"),]
+View(Sales_CDF_merged)
+#trimming, only for reg
+Sales_CDF_merged = Sales_CDF_merged[Sales_CDF_merged$bldg_ctgy %in%  c("ForReg"),]
+#saving trimmed data
+Sales_CDF_merged_Trim <- Sales_CDF_merged
+View(Sales_CDF_merged_Trim)
+names(Sales_CDF_merged_Trim)[names(Sales_CDF_merged_Trim) == 'Var16'] <- 'MedianIncomeForRenters'
+names(Sales_CDF_merged_Trim)[names(Sales_CDF_merged_Trim) == 'Var68'] <- 'MedianRent'
+names(Sales_CDF_merged_Trim)[names(Sales_CDF_merged_Trim) == 'Var15'] <- 'MedianHomeownerIncome'
+```
+
+```{r}
+#rerunning reg for renter with trimmed
+RegRent1 <- lm(Var68~Var16+price, data=Sales_CDF_merged)
+summary(RegRent1)
+#running reg with average sale price, untrim
+RegRent2 <- lm(Var68~Var16+AverageSalesPriceCD, data=Sales_CDF_merged)
+summary(RegRent2)
+#running reg with average sale price, trim
+RegRent3 <- lm(MedianRent~MedianIncomeForRenters+AverageSalesPriceCD, data=Sales_CDF_merged_Trim)
+summary(RegRent3)
+
+```
+
+
+```{r}
+#reapplying copy to reset data
+Sales_CDF_merged <- Sales_CDF_merged1
+#View(Sales_CDF_merged)
+#applying usable fix
+Sales_CDF_merged = Sales_CDF_merged[Sales_CDF_merged$usable %in%  c("True"),]
+#graph for renter price to renter income with best fit
+ggplot(Sales_CDF_merged, aes(x=Var68, y=Var16))+ geom_point() +
+  labs(title="Rental Price and Renter Income Correlation",x="Renter Price",y="Renter Income") +  geom_smooth(method="lm", se = FALSE)
+#graph for renter price to renter income with factor
+ggplot(Sales_CDF_merged, aes(x=Var68, y=Var16, color=factor(BoroCD)))+ geom_point() +
+  labs(title="Rental Price and Renter Income Correlation",x="Renter Price",y="Renter Income") +  geom_smooth(method="lm", se = FALSE)
+#sales reg untrimmed,var 15 is med homeowner income
+SalesReg <- lm(price~Var15, data=Sales_CDF_merged)
+summary(SalesReg)
+#sales reg trimmed, var15 is med homeowner income
+SalesReg1 <- lm(price ~ MedianHomeownerIncome, data=Sales_CDF_merged_Trim )
+summary(SalesReg1)
+```
+
+```{r}
+#Sales reg untrimmed, avg sale price
+SalesReg2 <- lm(AverageSalesPriceCD~Var15, data=Sales_CDF_merged)
+summary(SalesReg2)
+#Sales reg trimmed, avg sale price
+SalesReg3 <- lm(AverageSalesPriceCD~MedianHomeownerIncome, data=Sales_CDF_merged_Trim)
+summary(SalesReg3)
+#graph for sales price to med home income level, factor boro cd, untrim
+ggplot(Sales_CDF_merged, aes(x=Var15, y=price, color=factor(BoroCD)))+ geom_point() + ylim(0,1000000000) +
+  labs(title="Median Homeowner Income of CD and Sales Price Correlation",x="Median Homeowner Income",y="Price")
+#graph for sales price to med home income level, factor boro cd, trimmed
+ggplot(Sales_CDF_merged_Trim, aes(x=MedianHomeownerIncome, y=price, color=factor(BoroCD)))+ geom_point() + ylim(5000,25000000) +
+  labs(title="Median Homeowner Income of CD and Sales Price Correlation, Trimmed",x="Median Homeowner Income",y="Price")
+#graph for avg sales price to med home income level, factor boro cd, untrimmed
+ggplot(Sales_CDF_merged, aes(x=Var15, y=AverageSalesPriceCD, color=factor(BoroCD)))+ geom_point() +
+  labs(title="Median Homeowner Income of CD and Sales Average Price Correlation",x="Median Homeowner Income",y="Average Sales Price")
+#graph for avg sales price to med home income level, factor boro cd, trimmed
+ggplot(Sales_CDF_merged_Trim, aes(x=MedianHomeownerIncome, y=AverageSalesPriceCD, color=factor(BoroCD)))+ geom_point() +
+  labs(title="Median Homeowner Income of CD and Average Sales Price Correlation, Trimmed",x="Median Homeowner Income",y="Average Sales Price")
+```
+
+
+```{r}
+# Calculate the minimum year
+min_year <- min(Sales$year, na.rm = TRUE)
+
+# Calculate the maximum year
+max_year <- max(Sales$year, na.rm = TRUE)
+
+# Display the results
+cat("Minimum Year:", min_year, "\n")
+cat("Maximum Year:", max_year, "\n")
+```
+```{r}
+#regression for renters
+names(Sales_CDF_merged)[names(Sales_CDF_merged) == 'Var16'] <- 'MedRentIncome'
+names(Sales_CDF_merged)[names(Sales_CDF_merged) == 'Var68'] <- 'MedRentPrice'
+
+names(Sales_CDF_merged_Trim)[names(Sales_CDF_merged_Trim) == 'Var16'] <- 'MedRentIncome'
+names(Sales_CDF_merged_Trim)[names(Sales_CDF_merged_Trim) == 'Var68'] <- 'MedRentPrice'
+
+names(Sales_CDF_merged_Trim)[names(Sales_CDF_merged_Trim) == 'MedianRent'] <- 'MedRentPrice'
+names(Sales_CDF_merged_Trim)[names(Sales_CDF_merged_Trim) == 'MedianHomeownerIncome'] <- 'MedRentIncome'
+
+```
+
+```{r}
+#var16 should be med rent income
+#var68 should be med rent price
+RegRent <- lm(MedRentPrice~MedRentIncome+MedRentPrice, data=Sales_CDF_merged)
+summary(RegRent)
+#rerunning reg for renter with trimmed
+RegRent1 <- lm(MedRentPrice~MedRentIncome+MedRentPrice, data=Sales_CDF_merged_Trim)
+summary(RegRent1)
+#running reg with average sale price, untrim
+RegRent2 <- lm(MedRentPrice~MedRentIncome+AverageSalesPriceCD, data=Sales_CDF_merged)
+summary(RegRent2)
+#running reg with average sale price, trim
+RegRent3 <- lm(MedRentPrice~MedRentIncome+AverageSalesPriceCD, data=Sales_CDF_merged_Trim)
+summary(RegRent3)
+```
+
+```{r}
+names(Sales_CDF_merged)[names(Sales_CDF_merged) == 'MedianHomeownerIncome'] <- 'MedRentPrice'
+names(Sales_CDF_merged)[names(Sales_CDF_merged) == 'price'] <- 'MedRentPrice'
+
+```
+
+
+```{r}
+# MedianHomeownerIncome
+
+#sales reg untrimmed,var 15 is med homeowner income
+SalesReg <- lm(MedRentPrice~MedRentPrice, data=Sales_CDF_merged)
+summary(SalesReg)
+#sales reg trimmed, var15 is med homeowner income
+SalesReg1 <- lm(MedRentPrice ~ MedRentIncome, data=Sales_CDF_merged_Trim )
+summary(SalesReg1)
+#Sales reg untrimmed, avg sale price
+SalesReg2 <- lm(AverageSalesPriceCD~MedRentPrice, data=Sales_CDF_merged)
+summary(SalesReg2)
+#Sales reg trimmed, avg sale price
+SalesReg3 <- lm(AverageSalesPriceCD~MedRentIncome, data=Sales_CDF_merged_Trim)
+summary(SalesReg3)
+```
+
+
+
+```{r}
+#all regressions
+summary(RegRent)
+summary(RegRent1)
+summary(RegRent2)
+summary(RegRent3)
+summary(SalesReg)
+summary(SalesReg1)
+summary(SalesReg2)
+summary(SalesReg3)
+stargazer(RegRent, RegRent1, RegRent2, RegRent3, type="text", out="models11.txt")
+stargazer(SalesReg, SalesReg1, SalesReg2, SalesReg3, type="text", out="models22.txt")
+stargazer(RegRent3, type="text", out="models33.txt")
+stargazer(SalesReg3, type="text", out="models44.txt")
+```
+
+
+```{r}
+#View(CDF_merged)
+JamesTable <- CDF_merged[,c(1,4,5,22,116,114,115,117,118)]
+#View(JamesTable[1:10,])
+#renaming table
+names(JamesTable)[names(JamesTable) == 'Var16'] <- 'Median Renter Income'
+names(JamesTable)[names(JamesTable) == 'medannualrent'] <- 'Median Rental Price'
+names(JamesTable)[names(JamesTable) == 'ourAffordability'] <- 'Maximum Affordable Rent Under Our Analysis'
+names(JamesTable)[names(JamesTable) == 'AMIAffordability'] <- 'Maximum Affordable Rent Under AMI'
+names(JamesTable)[names(JamesTable) == 'ourAMIDum'] <- 'Affordable Under our Analysis?'
+names(JamesTable)[names(JamesTable) == 'AMIDum'] <- 'Affordable Under AMI?'
+#View(JamesTable[1:10,])
+```
+
+```{r}
+df <- JamesTable %>%
+  mutate(Difference = `Affordable Under AMI?` != `Affordable Under our Analysis?`)
+
+# Compute the average difference in rent affordability
+average_difference <- df %>%
+  summarise(Average_Difference = mean(`Maximum Affordable Rent Under Our Analysis` - 
+                                      `Maximum Affordable Rent Under AMI`, na.rm = TRUE))
+
+# Print the average difference
+print(average_difference)
+
+# Plot the map showing differences
+ggplot(df) +
+  geom_sf(aes(fill = Difference), color = "white", size = 0.3) +  # Add white borders for clarity
+  scale_fill_manual(
+    values = c("TRUE" = "#D55E00", "FALSE" = "#0072B2"),  # More refined color palette
+    labels = c("TRUE" = "Difference", "FALSE" = "No Difference")
+  ) +
+  theme_minimal() +
+  labs(
+    title = "Differences in Affordability Metrics",
+    subtitle = paste("Average Difference:", round(average_difference$Average_Difference, 2), "USD"),  # Add subtitle with average difference
+    fill = "Difference?"
+  ) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, color = "grey40", hjust = 0.5),
+    axis.text = element_blank(),  # Hide axis text for a cleaner look
+    axis.ticks = element_blank(), # Hide axis ticks
+    panel.grid = element_blank(), # Hide panel grid
+    legend.position = "top",
+    legend.title = element_text(face = "bold"),
+    plot.margin = margin(t = 20, r = 20, b = 20, l = 20)
+  )
+
+```
+
+```{r}
+
+
+# Assuming your DataFrame is already loaded as `df`
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(mapview)
+
+# Ensure the data is an sf object (if not already)
+df <- st_as_sf(JamesTable)
+
+# Create a column to identify differences
+df <- df %>%
+  mutate(Difference = `Affordable Under AMI?` != `Affordable Under our Analysis?`)
+
+# Compute the average difference in rent affordability
+average_difference <- df %>%
+  summarise(Average_Difference = mean(`Maximum Affordable Rent Under Our Analysis` - 
+                                      `Maximum Affordable Rent Under AMI`, na.rm = TRUE))
+
+# Print the average difference
+print(average_difference)
+
+# Visualize the differences interactively using mapview with enhanced colors and borders
+yo <- mapview(
+  df, 
+  zcol = "Difference", 
+  legend = TRUE, 
+  col.regions = c("mediumturquoise","#f70707"),  # Cooler and sexier shades of red and blue
+  map.types = "CartoDB.DarkMatter",
+  layer.name = "Affordability Differences",
+  lwd = 0.5  # Increase line width for better border separation
+)
+
+
+```
+```{r}
+# Count the number of TRUE values in the Difference column
+true_count <- df %>%
+  filter(Difference == TRUE) %>%
+  summarise(Count_TRUE = n())
+
+# Compute the average dollar difference for rows where Difference is TRUE
+average_dollar_diff <- df %>%
+  filter(Difference == TRUE) %>%
+  summarise(Average_Dollar_Difference = mean(`Maximum Affordable Rent Under Our Analysis` - 
+                                             `Maximum Affordable Rent Under AMI`, na.rm = TRUE))
+
+# Print the results
+print(true_count)
+print(average_dollar_diff)
+```
+```{r}
+write.csv(df_df, "affordability_differences_summary.csv", row.names = FALSE)
+```
+
+```{r}
+# adding mih_col to JamesTable
+mih_col <-  Sales_CDF_merged[,c(1,140)]
+mih_col <- data.frame(mih_col)
+mih_col <- subset(mih_col, select = -geometry)
+mih_col <- mih_col[!duplicated(mih_col),]
+View(mih_col[1:10,])
+df <- inner_join(JamesTable %>% as.data.frame(), mih_col %>% as.data.frame(), by = "BoroCD")
+df <- df %>% arrange(desc(mih_count))
+names(df)[names(df) == 'mih_count'] <- 'MIH Count in each CD'
+View(df[1:10,])
+df <- df[, c(1:9,11,10)]
+View(df[1:10,])
+
+df_df <- data.frame(df)
+df_df <- subset(df_df, select = -geometry)
+View(df_df[1:10,])
+
+View(df_df)
+df_test <- df_df %>%
+  mutate('Affordable.Under.AMI.' = ifelse('Affordable.Under.AMI.' == 0,"no","yes"))
+
+df_df$Affordable.Under.AMI. <- replace(df_df$Affordable.Under.AMI., df_df$Affordable.Under.AMI.==0, "No")
+df_df$Affordable.Under.AMI. <- replace(df_df$Affordable.Under.AMI., df_df$Affordable.Under.AMI.==1, "Yes")
+df_df$Affordable.Under.our.Analysis. <- replace(df_df$Affordable.Under.our.Analysis., df_df$Affordable.Under.our.Analysis.==0, "No")
+df_df$Affordable.Under.our.Analysis. <- replace(df_df$Affordable.Under.our.Analysis., df_df$Affordable.Under.our.Analysis.==1, "Yes")
+
+View(df_df)
+```
+
+```{r}
+# Count the number of "Yes" for each affordability metric
+affordability_counts <- data.frame(
+  Metric = c("Affordable Under AMI", "Affordable Under Our Analysis"),
+  Count = c(sum(df_df$Affordable.Under.AMI. == "Yes"),
+            sum(df_df$Affordable.Under.our.Analysis. == "Yes"))
+)
+
+ggplot(affordability_counts, aes(x = Metric, y = Count, fill = Metric)) +
+  geom_bar(stat = "identity", position = position_dodge(), color = "black", width = 0.7) +
+  geom_text(aes(label = Count), vjust = -0.5, size = 4, fontface = "bold", color = "black") +
+  labs(
+    title = "Affordability Analysis: AMI vs. Our Model",
+    subtitle = "Visualizing the number of districts classified by affordability",
+    x = "Affordability Metric",
+    y = "Number of Community Districts",
+    caption = "Data source: Community Affordability Report 2024"
+  ) +
+  theme_minimal(base_size = 15) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5, color = "darkblue"),
+    plot.subtitle = element_text(face = "italic", hjust = 0.5, color = "gray30"),
+    axis.text.x = element_text(face = "bold", size = 12, angle = 20, vjust = 0.9, hjust = 0.9),
+    axis.text.y = element_text(size = 10),
+    legend.position = "top",
+    panel.grid.major = element_line(color = "gray80", size = 0.5),
+    panel.grid.minor = element_blank()
+  ) +
+  scale_fill_manual(
+    values = c("steelblue" = "steelblue", "darkorange" = "darkorange"),
+    name = "Affordability Metric"
+  ) +
+  coord_cartesian(ylim = c(0, max(affordability_counts$Count) + 5))
+```
+
+
+```{r}
+library(mapview)
+
+if (!inherits(df_df, "sf")) {
+  df_df <- st_as_sf(df_df, coords = c("longitude", "latitude"), crs = 4326) # Adjust column names as needed
+}
+
+```
+
+```{r}
+ggplot(df_df, aes(x = reorder(Name, MIH.Count.in.each.CD), y = MIH.Count.in.each.CD)) +
+  geom_col(fill = "purple") +
+  coord_flip() +
+  labs(
+    title = "MIH Count Across Community Districts",
+    x = "Community District",
+    y = "Number of MIH Units"
+  ) +
+  theme_minimal()
+```
