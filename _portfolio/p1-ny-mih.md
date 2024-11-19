@@ -10,7 +10,7 @@ Key accomplishments:
 - Identified that **29** districts **(49%)** show affordability differences between metrics, with an average gap of **$15,752.38**, highlighting significant flaws of MIH policy.
 - Demonstrated that Median Renter Income explains **91%** of rent price variation, while sales prices are influenced by broader factors, with a weaker explanatory power.
 - Developed interactive maps and plots to highlight affordability misalignments, emphasizing differences in economically vulnerable regions like the Bronx and Brooklyn.
-- Provided insights on the limitations of AMI-based policies, while suggesting a better approach of calculating affordability based on local median renter incomes tailored to the economic realities of individual Community Districts.  
+- Suggested a better approach for calculating affordability based on local median renter incomes tailored to the economic realities of individual Community Districts.  
 
 ---> R Notebook - <a href="https://nbviewer.org/github/kikossik/kikossik.github.io/blob/master/files/notebooks/nyc_affordability.html" target="_blank">NBViewer</a>
 
