@@ -1,6 +1,6 @@
 ---
 title: "New York City Rental Affordability Analysis"
-excerpt: "<span>- Geospatial Analysis, Statistical Analysis, Data Visualization</span><br/>- R, ggplot2, sf, mapview, Regression Analysis<br/><br/>Conducted a comprehensive geospatial analysis of New York City rental affordability by comparing AMI-based metrics with localized affordability tailored to median renter incomes. Identified 29 districts (49%) with discrepancies, revealing an average affordability gap of $15,752.38. Regression analysis achieved R²: 0.910, showing income as the primary driver of rent prices, while sales prices were influenced by broader factors (R²: 0.260). Developed interactive maps to visualize disparities, highlighting vulnerabilities in lower-income districts like the Bronx and Brooklyn.<br/><img src='/images/heatmap.png'>"
+excerpt: "<span>- Geospatial Analysis, Statistical Analysis, Data Visualization</span><br/>- R, ggplot2, sf, mapview, Regression Analysis<br/><br/>Conducted a comprehensive geospatial analysis of New York City rental affordability by comparing AMI-based metrics with localized affordability tailored to median renter incomes. Identified 29 districts (49%) with discrepancies, revealing an average affordability gap of $15,752.38. Income is the primary driver of rent prices, while sales prices were influenced by broader factors. Developed interactive maps to visualize disparities, highlighting vulnerabilities in lower-income districts like the Bronx and Brooklyn.<br/><br/><img src='/images/heatmap.png'>"
 collection: portfolio
 ---
 
@@ -73,7 +73,7 @@ Visualizing the Data
 }
 
 .highlight-blue::before {
-  background: hsla(240, 70%, 50%, 0.3);
+  background: hsla(178, 60%, 55%, 1);
 }
 
 .highlight-yellow::before {
@@ -108,6 +108,7 @@ Before investigating the drivers for rent and sales prices, let's take a moment 
 
 **Understanding drivers of Rent Prices**  
 This analysis examines the relationship between median rent prices, median income for renters, and average sales price per community district (CD).  
+
 <img src='/images/scat1.png'>  
 - The scatterplot shows a very strong positive correlation between Median Rent Price and Median Income for Renters.
 - It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.  
@@ -120,6 +121,7 @@ Median Renter Income directly drives rent prices and influences affordability, w
 
 **Understanding drivers of Sales Prices**  
 This analysis examines the relationship between Average Sales Price per Community District (CD) and its predictors: Median Homeowner Income and Median Rent Price.
+
 <img src='/images/scat2.png'>  
 - The scatterplots for the drivers of Sales Prices are weaker than for Rent Prices. 
 - Still, the scatterplot shows a positive linear relationship between Median Homeowner Income and Average Sales Price per CD, and a weaker but still positive relationship is observed between Median Rent Price and Average Sales Price per CD as well.  
@@ -141,7 +143,7 @@ Affordability Analysis
 ---
 Before we continue, I want to remind you what the **goal** of this project was - understanding housing affordability in New York City by **comparing Mandatory Inclusionary Housing (MIH) standards**, which rely on fixed percentages of the Area Median Income (AMI), **with custom metrics tailored to district-specific renter incomes**.  
 
-**1. MIH Affordability:**  
+**- MIH Affordability:**  
 <br/>
 <div style="text-align: center; font-size: 80%;">
 <img src="https://latex.codecogs.com/svg.latex?\Large\text{AMI\ Affordability}=\frac{\text{AMI}}{3}" title="\Large \text{AMI Affordability}=\frac{\text{AMI}}{3}" />
@@ -149,7 +151,7 @@ Before we continue, I want to remind you what the **goal** of this project was -
 <br/>
 MIH uses the Area Median Income (AMI) to determine the maximum affordable annual rent.
 
-**2. Custom Affordability (Our Approach):**  
+**- Custom Affordability (Our Approach):**  
 <br/>
 <div style="text-align: center; font-size: 80%;">
 <img src="https://latex.codecogs.com/svg.latex?\Large\text{Our\ Affordability}=\frac{\text{Median\ Income\ for\ Renters\ per\ CD}}{3}" title="\Large \text{Our Affordability}=\frac{\text{Median Income for Renters per CD}}{3}" />
@@ -157,7 +159,7 @@ MIH uses the Area Median Income (AMI) to determine the maximum affordable annual
 <br/>
 This method uses the district-specific median income of renters instead of AMI.
 
-**3. Annualized Rent:**  
+**- Annualized Rent:**  
 <br/>
 <div style="text-align: center; font-size: 80%;">
 <img src="https://latex.codecogs.com/svg.latex?\Large\text{Median\ Annual\ Rent}=\text{Median\ Rent\ Price}\times12" title="\Large \text{Median Annual Rent}=\text{Median Rent Price}\times12" />
@@ -165,7 +167,7 @@ This method uses the district-specific median income of renters instead of AMI.
 <br/>
 This converts monthly rent prices to annual values to compare with the affordability thresholds.
 
-**4. Binary Affordability Dummy Variables:**  
+**- Binary Affordability Dummy Variables:**  
 
 <br/>
 <div style="text-align: center; font-size: 80%;">
@@ -180,7 +182,9 @@ This converts monthly rent prices to annual values to compare with the affordabi
 <br/>
 
 Now let's take a look if the housing is actually affordable.  
+
 <img src='/images/diff.png'>  
+
 This map compares NYC Community Districts' housing affordability using AMI-based and the custom metrics. Red districts show divergence between the measures, while blue indicates alignment.
 
 - **Concentration of Differences in Lower-Income Areas:**  
