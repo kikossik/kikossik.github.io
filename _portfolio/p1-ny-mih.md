@@ -16,8 +16,7 @@ Key accomplishments:
 
 Key Goals and Project Description
 ---
-This project focuses on analyzing housing affordability in New York City using detailed datasets on renter incomes, rental prices, and zoning policies. The goal is to evaluate how well current metrics, such as Area Median Income (AMI) affordability, reflect the real affordability challenges faced by renters in different community districts.  
-By computing and comparing affordability metrics, we aim to identify discrepancies, understand spatial affordability patterns, and provide insights into the effectiveness of existing housing policies, including Mandatory Inclusionary Housing (MIH) programs.
+This project analyzes housing affordability in NYC using data on renter incomes, rental prices, and zoning policies. It evaluates how well AMI-based metrics reflect renters' challenges and compares metrics to identify discrepancies, spatial patterns, and the effectiveness of policies like MIH.
 
 Brief Preliminaries to The Problem
 ---
