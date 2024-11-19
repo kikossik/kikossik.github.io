@@ -131,7 +131,8 @@ This analysis examines the relationship between Average Sales Price per Communit
 AverageSalesPriceCD = 23.470 × MedianHomeownerIncome - 918,144.700
 ```
 
-The regression analysis highlights the following:
+Interpreting Regression Results
+---
 - **Sales Reg:** **Median Homeowner Income** significantly predicts **Average Sales Price per CD**, with higher homeowner incomes correlating to higher sales prices.
   - **R²: 0.260** → Only 26% of the variability in sales prices is explained, indicating that sales prices depend on a broader range of factors.
 - **Rent Reg:** **Median Renter Income** shows a much stronger relationship with **Median Rent Prices**:
