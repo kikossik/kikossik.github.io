@@ -12,7 +12,7 @@ Key accomplishments:
 Brief Preliminaries to The Problem
 ---
 **Climate Change and Pipeline Infrastructure**   
-The oil and gas industry forms a critical component of the global energy supply chain, yet it is increasingly vulnerable to the impacts of climate change. Rising temperatures, sea-level rise, and extreme weather events have introduced new challenges, particularly in regions like the Gulf of Mexico, where environmental conditions and aging infrastructure intersect. Pipeline systems, vital for the transportation of hazardous liquids and gases, face heightened risks of accidents and failures due to shifting soil conditions, flooding, and structural corrosion.  
+The oil and gas industry forms a critical component of the global energy supply chain, yet it is surprisingly vulnerable to the impacts of climate change. Rising temperatures, sea-level rise, and extreme weather events have introduced new challenges, particularly in regions like the Gulf of Mexico, where environmental conditions and aging infrastructure intersect. Pipeline systems, vital for the transportation of hazardous liquids and gases, face heightened risks of accidents and failures due to shifting soil conditions, flooding, and structural corrosion.  
 **Scope of Study**  
 This project focuses on understanding the interplay between climate change and pipeline failures in the United States. By utilizing incident heat maps, predictive modeling of sea-level rise, and case studies of damaged infrastructure, the study aims to highlight the geographic and operational vulnerabilities of hazardous liquid and gas transmission pipelines. 
 
