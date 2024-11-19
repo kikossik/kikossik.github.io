@@ -38,10 +38,10 @@ Visualizing the Data
 **NYC Housing Dynamics**  
 <p>
   This map visualizes the spatial patterns of  
-  <span class="highlighted red">property sales density</span>, 
-  <span class="highlighted blue">Mandatory Inclusionary Housing (MIH) zones</span>, 
-  and 
-  <span class="highlighted yellow">commercial zoning areas</span> in New York City.
+  <span class="highlighted">property sales density</span>, Mandatory Inclusionary 
+  <span class="highlighted">Housing (MIH) zones</span>, 
+  and  
+  <span class="highlighted">commercial zoning areas</span> in New York City.
 </p>
 
 <!-- SVG for the wavy highlight filter -->
@@ -66,21 +66,18 @@ Visualizing the Data
     right: 0;
     top: 0;
     bottom: 0;
+    background: hsla(0, 100%, 50%, 0.3); /* Red highlight */
     filter: url(#wavyHighlight);
     z-index: -1;
     transform: translate(-0.2em, -0.2em) skew(7deg, 0);
     border-radius: 4px; /* Rounded highlight */
   }
 
-  .highlighted.red::before {
-    background: hsla(0, 100%, 50%, 0.3); /* Red highlight */
-  }
-
-  .highlighted.blue::before {
+  .highlighted:nth-child(2)::before {
     background: hsla(240, 100%, 50%, 0.3); /* Blue highlight */
   }
 
-  .highlighted.yellow::before {
+  .highlighted:nth-child(3)::before {
     background: hsla(60, 100%, 50%, 0.3); /* Yellow highlight */
   }
 </style>
@@ -117,7 +114,7 @@ This analysis examines the relationship between median rent prices, median incom
 - The scatterplot shows a very strong positive correlation between Median Rent Price and Median Income for Renters.
 - It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.  
 
-<img src='/images/reg1.PNG'>  
+<img src="/images/reg1.PNG" style="display: block; margin: 0 auto;"> 
 The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices, so this is definitely what we want to see.  
 
 **Understanding drivers of Sales Prices**  
@@ -131,5 +128,5 @@ The regression analysis highlights that Median Homeowner Income significantly pr
 In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an R² of 0.910 in their model, indicating that renter incomes account for 91% of the variability in rents. Additionally, the standard error of Median Homeowner Income in the sales regression (0.166) is nearly 8,000 times larger than the standard error of Median Income for Renters in the rent regression (0.00002), reflecting the tighter relationship between renter incomes and rent prices.  
 While both models show significant predictors (p < 0.01), the rent model's much higher R² and lower residual error suggest that rent prices are more directly and reliably determined by income levels compared to sales prices, which are influenced by a broader set of factors.
 
-Important Conclusions
+What We Have Been Waiting For
 ---
