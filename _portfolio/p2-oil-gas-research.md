@@ -1,6 +1,6 @@
 ---
 title: "Does Climate Change Affect Oil & Gas Infrastructure?"
-excerpt: "<span>- Interactive Visualization, Data Processing, Conference Speaking</span><br/>- Python, d3.js<br/><br/>This project stems from research I conducted at Stony Brook University under the guidance of Dr. Halada (Materials Science) and Dr. Montgomery (Economics). I had the chance to merge this work with Prof. Mueller’s Data Visualization class, which led to creating an interactive dashboard. This project captures what data science is all about - the intersection of multiple disciplines coming together to tell a meaningful story.<br/><img src='/images/oil_gas_pic.PNG'>"
+excerpt: "<span>- Interactive Visualization, Data Processing, Conference Speaking</span><br/>- Python, d3.js<br/><br/>This project stems from research I conducted at Stony Brook University under the guidance of Dr. Halada (Materials Science) and Dr. Montgomery (Economics). I had the chance to merge this work with Prof. Mueller’s Data Visualization class, which led to creating an interactive dashboard. This project captures what data science is all about - the intersection of multiple disciplines coming together to tell a meaningful story.<br/><br/><img src='/images/oil_gas_pic.PNG'>"
 collection: portfolio
 ---
 
@@ -22,6 +22,7 @@ I had the opportunity to integrate my research with **CSE 332 - Introduction to 
 SBU Economics Conference and URECA
 ---
 I got to present my research at the **SBU Economics Conference**, and I also put together a poster for **URECA** as part of the <a href="https://www.stonybrook.edu/commcms/vertically-integrated-projects/teams/_team_page/team_page.php?team=Engineering%20Adaptation%20to%20Climate%20Change%20(EACC)" target="_blank">**EACC VIP**</a> team with Prof. Halada. It was a great experience getting our project out there for more people to see. I have attached my poster below, where you can see my work in researching about the topic and creating more visualizations to help capture the story better.  
+
 <img src='/images/poster.PNG'>
 
 
