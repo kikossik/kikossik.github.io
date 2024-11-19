@@ -22,7 +22,7 @@ Housing affordability is traditionally assessed using benchmarks like AMI, but t
 **Why Calculate Affordability This Way?**  
 Using the widely accepted "one-third of income" rule to define affordability provides a practical lens to assess housing burdens. However, AMI-based thresholds can overgeneralize affordability, particularly in diverse cities like NYC where income levels vary significantly across districts. A district-specific metric, based on local renter incomes, offers a more accurate depiction of affordability challenges.
 
-Data
+Data Description
 ---
 - **NYC Sales Data**  
 Contains records of property sales in NYC, including variables such as price, building category, and geographic coordinates.
@@ -38,10 +38,10 @@ Visualizing the Data
 **NYC Housing Dynamics**  
 <p>
   This map visualizes the spatial patterns of  
-  <span class="highlighted">property sales density</span>, as well as 
-  <span class="highlighted">Mandatory Inclusionary Housing (MIH) zones</span>, 
-  and  
-  <span class="highlighted">commercial zoning areas</span> in New York City.
+  <span class="highlighted red">property sales density</span>, 
+  <span class="highlighted blue">Mandatory Inclusionary Housing (MIH) zones</span>, 
+  and 
+  <span class="highlighted yellow">commercial zoning areas</span> in New York City.
 </p>
 
 <!-- SVG for the wavy highlight filter -->
@@ -66,18 +66,21 @@ Visualizing the Data
     right: 0;
     top: 0;
     bottom: 0;
-    background: hsla(0, 100%, 50%, 0.3); /* Red highlight */
     filter: url(#wavyHighlight);
     z-index: -1;
     transform: translate(-0.2em, -0.2em) skew(7deg, 0);
     border-radius: 4px; /* Rounded highlight */
   }
 
-  .highlighted:nth-child(2)::before {
+  .highlighted.red::before {
+    background: hsla(0, 100%, 50%, 0.3); /* Red highlight */
+  }
+
+  .highlighted.blue::before {
     background: hsla(240, 100%, 50%, 0.3); /* Blue highlight */
   }
 
-  .highlighted:nth-child(3)::before {
+  .highlighted.yellow::before {
     background: hsla(60, 100%, 50%, 0.3); /* Yellow highlight */
   }
 </style>
@@ -113,16 +116,20 @@ This analysis examines the relationship between median rent prices, median incom
 <img src='/images/scat1.png'>  
 - The scatterplot shows a very strong positive correlation between Median Rent Price and Median Income for Renters.
 - It also reveals a weaker and more dispersed relationship between Median Rent Price and Average Sales Price per CD. While there is a general upward trend, the variability in rent prices suggests that other factors may contribute to rental pricing beyond sales trends at the district level.  
-<img src='/images/reg1.PNG'>  
-The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices. With an R² of 0.910, the model explains 91% of the variation in Median Rent Prices, demonstrating a strong fit and confirming the critical role of renter income in shaping rent affordability.
 
-**Understand drivers of Sales Prices**  
+<img src='/images/reg1.PNG'>  
+The big picture emphasizes that Median Renter Income is the key driver of rent prices, directly influencing rental affordability, while Average Sales Prices per CD exhibit a more indirect impact. This highlights the importance of prioritizing income-focused housing policies to address affordability challenges effectively. For this project, we focused on minimizing predictors to identify the major factors driving rent prices, so this is definitely what we want to see.  
+
+**Understanding drivers of Sales Prices**  
 This analysis examines the relationship between Average Sales Price per Community District (CD) and its predictors: Median Homeowner Income and Median Rent Price.
 <img src='/images/scat2.png'>  
 - The scatterplots for the drivers of Sales Prices are weaker than for Rent Prices. 
 - Still, the scatterplot shows a positive linear relationship between Median Homeowner Income and Average Sales Price per CD, and a weaker but still positive relationship is observed between Median Rent Price and Average Sales Price per CD as well.  
+
 <img src='/images/reg2.PNG'>  
-The regression analysis highlights that Median Homeowner Income significantly predicts Average Sales Price per CD, with a positive coefficient of 23.470, indicating that higher homeowner incomes correspond to higher sales prices. However, the model's R² of 0.260 shows that only 26% of the variability in sales prices is explained, suggesting sales prices are influenced by a broader set of factors beyond homeowner income. In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an R² of 0.910 in their model, indicating that renter incomes account for 91% of the variability in rents. This comparison highlights that rent prices are more directly tied to income levels, while sales prices are likely shaped by a more complex features.
+The regression analysis highlights that Median Homeowner Income significantly predicts Average Sales Price per CD, indicating that higher homeowner incomes correspond to higher sales prices. However, the model's R² of 0.260 shows that only 26% of the variability in sales prices is explained, suggesting sales prices are influenced by a broader set of factors beyond homeowner income.  
+In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an R² of 0.910 in their model, indicating that renter incomes account for 91% of the variability in rents. Additionally, the standard error of Median Homeowner Income in the sales regression (0.166) is nearly 8,000 times larger than the standard error of Median Income for Renters in the rent regression (0.00002), reflecting the tighter relationship between renter incomes and rent prices.  
+While both models show significant predictors (p < 0.01), the rent model's much higher R² and lower residual error suggest that rent prices are more directly and reliably determined by income levels compared to sales prices, which are influenced by a broader set of factors.
 
 Important Conclusions
 ---
