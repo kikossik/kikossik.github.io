@@ -131,18 +131,16 @@ While both models show significant predictors (p < 0.01), the rent model's much 
 What We Have Been Waiting For
 ---
 Before we continue, I want to remind you what the goal of this project was - understanding housing affordability in New York City by comparing Mandatory Inclusionary Housing (MIH) standards, which rely on fixed percentages of the Area Median Income (AMI), with custom metrics tailored to district-specific renter incomes.  
-The first rows of the final table calculated:  
-
-| BoroCD | Borough   | Name                             | MedianIncomeForRenters | Median.Rental.Price | Maximum.Affordable.Rent.Under.Our.Analysis | Maximum.Affordable.Rent.Under.AMI | Affordable.Under.AMI. | Affordable.Under.our.Analysis. | MIH.Count.in.each.CD |
-|--------|-----------|----------------------------------|-------------------------|---------------------|-------------------------------------------|-----------------------------------|-----------------------|--------------------------------|-----------------------|
-| 201    | Bronx     | Mott Haven/Melrose              | 22230                  | 12000               | 7410                                      | 32033.33333                       | Yes                   | No                             | 12                    |
-| 302    | Brooklyn  | Fort Greene/Brooklyn Heights    | 95180                  | 27120               | 31726.66667                               | 32033.33333                       | Yes                   | Yes                            | 12                    |
-| 111    | Manhattan | East Harlem                     | 30260                  | 10920               | 10086.66667                               | 32033.33333                       | Yes                   | No                             | 8                     |
-| 303    | Brooklyn  | Bedford Stuyvesant              | 51310                  | 17520               | 17103.33333                               | 32033.33333                       | Yes                   | No                             | 8                     |
-| 308    | Brooklyn  | Crown Heights/Prospect Heights  | 62570                  | 18960               | 20856.66667                               | 32033.33333                       | Yes                   | Yes                            | 8                     |
-
-And to give a better visual:  
 <img src='/images/diff.png'>  
 This map visualizes differences in housing affordability across New York City's Community Districts by comparing affordability under the AMI-based metric and our custom metric - "one-third of income" per CD. Districts shaded red indicate areas where the two affordability measures diverge ("TRUE"), while blue districts show alignment between the metrics ("FALSE").  
 
+- Concentration of Differences in Lower-Income Areas:
+The red regions are largely concentrated in districts with lower-income populations, particularly in outer boroughs like the Bronx and parts of Brooklyn. These districts are more likely to have higher discrepancies between AMI-based affordability and local renter income-based metrics.
+This suggests that AMI-based thresholds overestimate affordability in these regions, as they fail to align with the actual economic conditions of renters.
+- Alignment in Higher-Income Areas:
+Blue regions, indicating agreement between the metrics, are more prominent in higher-income districts, particularly in Manhattan and affluent parts of Queens. In these areas, AMI-based affordability more accurately reflects local economic realities due to smaller income disparities.
+-,Implications of Discrepancies:
+The map underscores the limitations of AMI-based affordability metrics, which often use citywide income averages that mask district-level income disparities. In lower-income districts, this leads to a mismatch, labeling housing as "affordable" when it is not genuinely affordable for local residents.  
+  
+  
 This analysis highlights the systemic flaws in standardized affordability metrics like AMI, particularly for lower-income districts. By relying on a custom affordability measure tied to median renter income, the project reveals significant gaps in how affordability is calculated and understood. These discrepancies emphasize the need for more nuanced, location-specific policies to better address affordability challenges in NYC's most vulnerable areas.
