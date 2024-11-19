@@ -144,40 +144,23 @@ Affordability Analysis
 Before we continue, I want to remind you what the **goal** of this project was - understanding housing affordability in New York City by **comparing Mandatory Inclusionary Housing (MIH) standards**, which rely on fixed percentages of the Area Median Income (AMI), **with custom metrics tailored to district-specific renter incomes**.  
 
 **1. MIH Affordability:**  
-\[
-\text{AMI Affordability} = \frac{\text{AMI}}{3}
-\]
-MIH uses the Area Median Income (AMI) to determine the maximum affordable annual rent.  
+<img src="https://latex.codecogs.com/svg.latex?\Large\text{AMI\ Affordability}=\frac{\text{AMI}}{3}" title="\Large \text{AMI Affordability}=\frac{\text{AMI}}{3}" />  
+MIH uses the Area Median Income (AMI) to determine the maximum affordable annual rent.
 
 **2. Custom Affordability (Our Approach):**  
-\[
-\text{Our Affordability} = \frac{\text{Median Income for Renters per CD}}{3}
-\]
-This method uses the district-specific median income of renters instead of AMI.  
+<img src="https://latex.codecogs.com/svg.latex?\Large\text{Our\ Affordability}=\frac{\text{Median\ Income\ for\ Renters\ per\ CD}}{3}" title="\Large \text{Our Affordability}=\frac{\text{Median Income for Renters per CD}}{3}" />  
+This method uses the district-specific median income of renters instead of AMI.
 
 **3. Annualized Rent:**  
-\[
-\text{Median Annual Rent} = \text{Median Rent Price} \times 12
-\]
-This converts monthly rent prices to annual values to compare with the affordability thresholds.  
+<img src="https://latex.codecogs.com/svg.latex?\Large\text{Median\ Annual\ Rent}=\text{Median\ Rent\ Price}\times12" title="\Large \text{Median Annual Rent}=\text{Median Rent Price}\times12" />  
+This converts monthly rent prices to annual values to compare with the affordability thresholds.
 
-- **AMI-Based Dummy:**  
-\[
-\text{AMIDum} = 
-\begin{cases} 
-1 & \text{if } \text{AMI Affordability} \geq \text{Median Annual Rent} \\
-0 & \text{otherwise}
-\end{cases}
-\]
+**4. Binary Affordability Dummy Variables:**
+ 
+<img src="https://latex.codecogs.com/svg.latex?\Large\text{AMIDum}=\begin{cases}1&\text{if}\ \text{AMI\ Affordability}\geq\text{Median\ Annual\ Rent}\\0&\text{otherwise}\end{cases}" title="\Large \text{AMIDum}=\begin{cases}1&\text{if}\ \text{AMI Affordability}\geq\text{Median Annual Rent}\\0&\text{otherwise}\end{cases}" />
 
-- **Custom Dummy:**  
-\[
-\text{OurAMIDum} = 
-\begin{cases} 
-1 & \text{if } \text{Our Affordability} \geq \text{Median Annual Rent} \\
-0 & \text{otherwise}
-\end{cases}
-\]
+<img src="https://latex.codecogs.com/svg.latex?\Large\text{OurAMIDum}=\begin{cases}1&\text{if}\ \text{Our\ Affordability}\geq\text{Median\ Annual\ Rent}\\0&\text{otherwise}\end{cases}" title="\Large \text{OurAMIDum}=\begin{cases}1&\text{if}\ \text{Our Affordability}\geq\text{Median Annual Rent}\\0&\text{otherwise}\end{cases}" />
+
 
 Now let's take a look if the housing is actually affordable.  
 
