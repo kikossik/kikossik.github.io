@@ -123,10 +123,26 @@ This analysis examines the relationship between Average Sales Price per Communit
 - The scatterplots for the drivers of Sales Prices are weaker than for Rent Prices. 
 - Still, the scatterplot shows a positive linear relationship between Median Homeowner Income and Average Sales Price per CD, and a weaker but still positive relationship is observed between Median Rent Price and Average Sales Price per CD as well.  
 
-<img src='/images/reg2.PNG'>  
+<img src='/images/reg2.PNG' style="display: block; margin: 0 auto;">
 The regression analysis highlights that Median Homeowner Income significantly predicts Average Sales Price per CD, indicating that higher homeowner incomes correspond to higher sales prices. However, the model's R² of 0.260 shows that only 26% of the variability in sales prices is explained, suggesting sales prices are influenced by a broader set of factors beyond homeowner income.  
 In contrast, the drivers of Median Rent Prices, such as Median Income for Renters, exhibit a much stronger relationship, with an R² of 0.910 in their model, indicating that renter incomes account for 91% of the variability in rents. Additionally, the standard error of Median Homeowner Income in the sales regression (0.166) is nearly 8,000 times larger than the standard error of Median Income for Renters in the rent regression (0.00002), reflecting the tighter relationship between renter incomes and rent prices.  
 While both models show significant predictors (p < 0.01), the rent model's much higher R² and lower residual error suggest that rent prices are more directly and reliably determined by income levels compared to sales prices, which are influenced by a broader set of factors.
 
 What We Have Been Waiting For
 ---
+Before we continue, I want to remind you what the goal of this project was - understanding housing affordability in New York City by comparing Mandatory Inclusionary Housing (MIH) standards, which rely on fixed percentages of the Area Median Income (AMI), with custom metrics tailored to district-specific renter incomes.  
+The first rows of the final table calculated:  
+
+| BoroCD | Borough   | Name                             | MedianIncomeForRenters | Median.Rental.Price | Maximum.Affordable.Rent.Under.Our.Analysis | Maximum.Affordable.Rent.Under.AMI | Affordable.Under.AMI. | Affordable.Under.our.Analysis. | MIH.Count.in.each.CD |
+|--------|-----------|----------------------------------|-------------------------|---------------------|-------------------------------------------|-----------------------------------|-----------------------|--------------------------------|-----------------------|
+| 201    | Bronx     | Mott Haven/Melrose              | 22230                  | 12000               | 7410                                      | 32033.33333                       | Yes                   | No                             | 12                    |
+| 302    | Brooklyn  | Fort Greene/Brooklyn Heights    | 95180                  | 27120               | 31726.66667                               | 32033.33333                       | Yes                   | Yes                            | 12                    |
+| 111    | Manhattan | East Harlem                     | 30260                  | 10920               | 10086.66667                               | 32033.33333                       | Yes                   | No                             | 8                     |
+| 303    | Brooklyn  | Bedford Stuyvesant              | 51310                  | 17520               | 17103.33333                               | 32033.33333                       | Yes                   | No                             | 8                     |
+| 308    | Brooklyn  | Crown Heights/Prospect Heights  | 62570                  | 18960               | 20856.66667                               | 32033.33333                       | Yes                   | Yes                            | 8                     |
+
+And to give a better visual:  
+<img src='/images/diff.png'>  
+This map visualizes differences in housing affordability across New York City's Community Districts by comparing affordability under the AMI-based metric and our custom metric - "one-third of income" per CD. Districts shaded red indicate areas where the two affordability measures diverge ("TRUE"), while blue districts show alignment between the metrics ("FALSE").  
+
+This analysis highlights the systemic flaws in standardized affordability metrics like AMI, particularly for lower-income districts. By relying on a custom affordability measure tied to median renter income, the project reveals significant gaps in how affordability is calculated and understood. These discrepancies emphasize the need for more nuanced, location-specific policies to better address affordability challenges in NYC's most vulnerable areas.
