@@ -3,24 +3,6 @@ title: "New York City Rental Affordability Analysis"
 excerpt: "<span>- Geospatial Analysis, Statistical Analysis, Data Visualization</span><br/>- R, ggplot2, sf, mapview, Regression Analysis<br/><br/>Conducted a comprehensive geospatial analysis of New York City rental affordability by comparing AMI-based metrics with localized affordability tailored to median renter incomes. Identified 29 districts (49%) with discrepancies, revealing an average affordability gap of $15,752.38. Regression analysis achieved R²: 0.910, showing income as the primary driver of rent prices, while sales prices were influenced by broader factors (R²: 0.260). Developed interactive maps to visualize disparities, highlighting vulnerabilities in lower-income districts like the Bronx and Brooklyn.<br/><img src='/images/heatmap.png'>"
 collection: portfolio
 ---
-<style TYPE="text/css">
-code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
-</style>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
-    }
-});
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
 Key accomplishments:
 ---
@@ -157,7 +139,7 @@ The regression analysis highlights the following:
   - The **standard error** for **Median Homeowner Income** in the sales model (0.166) is nearly **8,000** times larger than the **standard error** for **Median Renter Income** in the rent model (0.00002), highlighting the tighter link between renter incomes and rents.
 - Both models show significant predictors (*p < 0.01*), but the **Rent Reg** model’s higher R² and lower residual error indicate that rent prices are more directly and reliably determined by incomes compared to **Sales Reg** sales prices, which are influenced by multiple factors. 
 
-Affordability Calculations
+Affordability Analysis
 ---
 Before we continue, I want to remind you what the **goal** of this project was - understanding housing affordability in New York City by **comparing Mandatory Inclusionary Housing (MIH) standards**, which rely on fixed percentages of the Area Median Income (AMI), **with custom metrics tailored to district-specific renter incomes**.  
 
