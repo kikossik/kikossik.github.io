@@ -73,7 +73,7 @@ Visualizing the Data
 }
 
 .highlight-blue::before {
-  background: hsla(178, 60%, 55%, 1);
+  background: hsla(178, 60%, 55%, 0.3);
 }
 
 .highlight-yellow::before {
