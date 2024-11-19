@@ -101,7 +101,6 @@ Visualizing the Data
 
 Statistical Analysis
 ---
-**Median Rent Price by Property Type**  
 <img src='/images/box.png'>  
 Before investigating the drivers for rent and sales prices, let's take a moment and look at this cool boxplot. This boxplot examines the distribution of median rent prices across various property types grouped into categories such as Residential, Condos & Co-ops, Commercial, Public & Cultural, and Other. I am not going to emphasize on this part too much, but some quick observations:  
 - This plot illustrates the significant variation in rental affordability across different property types.  
@@ -182,16 +181,17 @@ This converts monthly rent prices to annual values to compare with the affordabi
 <br/>
 
 Now let's take a look if the housing is actually affordable.  
-
 <img src='/images/diff.png'>  
 This map compares NYC Community Districts' housing affordability using AMI-based and the custom metrics. Red districts show divergence between the measures, while blue indicates alignment.
 
-- Concentration of Differences in Lower-Income Areas:  
-The red areas are mostly found in lower-income neighborhoods, especially in outer boroughs like the Bronx and parts of Brooklyn. In these areas, there is often a big gap between affordability based on Area Median Income (AMI) and what renters can actually afford based on their incomes. This shows that AMI-based measures may overestimate affordability in these regions, as they don’t match the real financial situations of renters.
-- Alignment in Higher-Income Areas:  
-Blue areas, which show agreement between the metrics, are more common in higher-income neighborhoods, especially in Manhattan and wealthy parts of Queens. Here, AMI-based affordability aligns better with local economic conditions because income differences are smaller.
+- **Concentration of Differences in Lower-Income Areas:**  
+Red areas, mostly in the Bronx and Brooklyn, highlight gaps between AMI-based and renter-based affordability, showing AMI often overestimates affordability.
+- **Alignment in Higher-Income Areas:**  
+Blue areas, common in Manhattan and affluent parts of Queens, show better alignment as income differences are smaller.
   
 **Out of 59 Community Districts, 29 districts (49%) show differences between the AMI-based and custom affordability metrics.**  
 **The average affordability gap is $15,752.38.**  
 
-This analysis exposes the systematic flaws of standardized metrics like AMI, especially in lower-income neighborhoods targeted by MIH policy. By using a custom measure based on median renter income, the study discovers major gaps in how affordability is calculated. These findings highlight the need for more tailored, district-specific policies to better address affordability issues in NYC's most vulnerable areas.
+This analysis exposes the systematic flaws of standardized metrics like AMI, especially in lower-income neighborhoods targeted by MIH policy. By using a custom measure based on median renter income, the study discovers major gaps in how affordability is calculated. These findings highlight the need for more tailored, district-specific policies to better address affordability issues in NYC's most vulnerable areas.  
+
+---> R Notebook - <a href="https://nbviewer.org/github/kikossik/kikossik.github.io/blob/master/files/notebooks/nyc_affordability.html" target="_blank">NBViewer</a>
