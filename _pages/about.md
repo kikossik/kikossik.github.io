@@ -7,7 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-Passionate about data visualization and machine learning. Seeking full-time opportunities.
+Passionate about data visualization and machine learning. Seeking full-time opportunities.  
+Check out <a href="https://kikossik.github.io/portfolio/" target="_blank">my portfolio</a>!
 
 Education
 ---
@@ -22,7 +23,7 @@ Education
 Professional Experience
 ---
 - **University of Southern California**  
-  **Computer Vision Engineer**  
+  **Machine Learning Engineer**  
   *Aug 2024 - Present | Remote, CA*  
   Ophthalmology research at Dr. Penkova's lab, cool computer vision stuff for early glaucoma detection.
 

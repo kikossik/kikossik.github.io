@@ -1,6 +1,6 @@
 ---
 title: "Does Climate Change Affect Oil & Gas Infrastructure?"
-excerpt: "<span>- Interactive Visualization, Data Processing, Conference Speaking</span><br/>- Python, d3.js<br/><br/>This project stems from research I conducted at Stony Brook University under the guidance of Dr. Halada (Materials Science) and Dr. Montgomery (Economics). I had the chance to merge this work with Prof. Mueller’s Data Visualization class, which led to creating an interactive dashboard. This project captures what data science is all about - the intersection of multiple disciplines coming together to tell a meaningful story.<br/><br/><img src='/images/oil_gas_pic.PNG'>"
+excerpt: "<span>- Interactive Visualization, Data Processing, Conference Speaking</span><br/>- d3.js, Python, Flask<br/><br/>This project stems from research I conducted at Stony Brook University under the guidance of Dr. Halada (Materials Science) and Dr. Montgomery (Economics). I had the chance to merge this work with Prof. Mueller’s Data Visualization class, which led to creating an interactive dashboard. This project captures what data science is all about - the intersection of multiple disciplines coming together to tell a meaningful story.<br/><br/><img src='/images/oil_gas_pic.PNG'>"
 collection: portfolio
 ---
 
