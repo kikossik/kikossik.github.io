@@ -3,7 +3,6 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
-      <!-- Adding Resume Link if it exists -->
   {% if site.author.resume %} <p><a href="{{ site.author.resume }}" target="_blank">View my Resume</a></p> {% endif %}
     
   {% if page.sidebar %}
