@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 Passionate about data visualization and machine learning. Seeking full-time opportunities.  
-Check out <a href="https://kikossik.github.io/portfolio/" target="_blank">my portfolio</a>!
+Check out <a href="https://kikossik.github.io/portfolio/">my portfolio</a>!
 
 Education
 ---
