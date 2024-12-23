@@ -34,7 +34,7 @@ TRAIN_IMG_DIR = os.path.join(BASE_DIR, 'train_images')
 # TEST_IMG_DIR = os.path.join(BASE_DIR, 'test_images') commented out since we don't need this
 
 # GOAL - 1 - current goal of this project is to compare most used deep learning models in ophtalmology for diabetic retinopathy classification and see how they perform
-# on NVIDEA L40S. potentially we can extend and compare with other GPUs as well, but for now we focus on L40S provided from Lightning AI
+# on NVIDEA L4. potentially we can extend and compare with other GPUs as well, but for now we focus on L40S provided from Lightning AI
 # - 2 - after that we select two models, one with best performance, and one that is most efficient. then we will apply image preprocessing to our data
 # and hyperparameter tuning to get both models as best scores as possible
 
